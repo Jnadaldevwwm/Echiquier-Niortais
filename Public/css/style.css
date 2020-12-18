@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
+/*
+*   titres : font-family: 'Merriweather', serif;
+*   textes : font-family: 'Roboto', sans-serif;
+*/
+/****************
+*   General
+****************/
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    margin: 0;
+}
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+}
+
+/* Class générales  */
+.mAuto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.txtCenter{
+    text-align: center;
+}
+.dBlock{
+    display: block;
+}
+
+
+/**************
+*   Template
+**************/
+#topHeader{
+    background-color: blue;
+}
+#banner{
+    background-image: url("../images/tempBan.jpg");
+    background-position: center;
+    padding: 75px 0 75px 0;
+    text-align: center;
+}
+#navBar{
+    background-color: brown;
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#midContent{
+    display: flex;
+    flex-flow: column wrap;
+}
+#midContent aside{
+    order: 1;
+}
+#midContent main{
+    order: 2;
+}
+#motd{
+    background-color: cadetblue;
+    padding: 25px;
+    text-align: center;
+}
+
+/**************
+*   Accueil
+**************/
+.cardArticle{
+    width: 80%;
+    border: 1px solid black;
+    padding: 0 15px 15px 15px;
+    margin-bottom: 25px;
+}
+.infoArticle{
+    margin-bottom: 5px;
+    font-style: italic;
+}
+.cardArticle img{
+    width: 100%;
+    height: auto;
+}
+.cardArticle h3{
+    text-align: center;
+}
+.cardArticle .lienArticle{
+    display: block;
+    text-align: right;
+}
