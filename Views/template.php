@@ -27,5 +27,8 @@
             </div>
         </aside>
     </section>
+    <footer>
+        Le footer
+    </footer>
 </body>
 </html>

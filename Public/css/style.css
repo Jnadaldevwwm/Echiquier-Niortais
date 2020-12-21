@@ -34,7 +34,7 @@ h1, h2, h3, h4 {
 *   Template
 **************/
 #topHeader{
-    background-color: blue;
+    background-color: #a06200;
 }
 #banner{
     background-image: url("../images/tempBan.jpg");
@@ -43,7 +43,7 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 #navBar{
-    background-color: brown;
+    background-color: #a06200;
     padding: 20px;
     display: flex;
     flex-flow: row wrap;
@@ -64,6 +64,35 @@ h1, h2, h3, h4 {
     padding: 25px;
     text-align: center;
 }
+footer{
+    padding: 5px;
+    background-color: #a06200;
+}
+
+/*** Responsive tempalte ***/
+@media screen and (min-width: 1025px){
+    body{
+        background-color: #3a1c09;
+    }
+    #midContent {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        background-color: rgb(255, 249, 236);
+        flex-flow: row wrap;
+    }
+    #midContent aside{
+        width: 20%;
+        order: 2;
+    }
+    #midContent main{
+        width: 80%;
+        order: 1;
+    }
+
+
+}
+
 
 /**************
 *   Accueil
