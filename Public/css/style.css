@@ -28,6 +28,12 @@ h1, h2, h3, h4 {
 .dBlock{
     display: block;
 }
+.dNone{
+    display: none;
+}
+.dFlex{
+    display: flex;
+}
 
 
 /**************
@@ -35,6 +41,9 @@ h1, h2, h3, h4 {
 **************/
 #topHeader{
     background-color: #a06200;
+    color: white;
+    text-align: center;
+    font-size: .9rem;
 }
 #banner{
     background-image: url("../images/tempBan.jpg");
@@ -64,9 +73,37 @@ h1, h2, h3, h4 {
     padding: 25px;
     text-align: center;
 }
+#desktopNav{
+    display: none;
+}
 footer{
     padding: 5px;
     background-color: #a06200;
+}
+nav ul{
+    padding: 0;
+}
+nav ul li {
+    list-style: none;
+}
+/*** Navbar Burgered ***/
+.togglingMenu{
+    position: fixed;
+    transform: translateX(-250px);
+    transition: transform 1s;
+}
+#togglingMenu nav{
+    background-color: white;
+    height: 100vh;
+    border-right: 1px solid black;
+    padding: 15px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.toggleNavAnimation{
+    transform: translateX(0);
 }
 
 /*** Responsive tempalte ***/
@@ -91,6 +128,22 @@ footer{
     #midContent main{
         width: 80%;
         order: 1;
+    }
+    #hamburger{
+        display: none;
+    }
+    #desktopNav{
+        display: block;
+        width: 80%;
+    }
+    #desktopNav ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin: 0;
+    }
+    #desktopNav ul li{
+        padding-right: 25px;
     }
 }
 

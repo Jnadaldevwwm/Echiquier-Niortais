@@ -7,16 +7,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div id="togglingMenu" class='togglingMenu hidden'>
+        <nav id='dynamicNav'>
+            <ul>
+                <li><a href="">Lien 1</a></li>
+                <li><a href="">Lien 2</a></li>
+                <li><a href="">Lien 3</a></li>
+                <li><a href="">Lien 4</a></li>
+            </ul>
+        </nav>
+</div>
     <header>
-        <div id="topHeader">Top Header</div>
+        <div id="topHeader">L'Echiquier Niortais - 49 rue de Ribray 7900 Niort - Tel : 06 85 57 74 60 - E-Mail : echiquiers.niortais@gmail.com</div>
         <div id="banner">
             <img src="images/logo.gif" alt="logo echiquier niortais">
         </div>
         <div id='navBar'>
             <div id="hamburger">=</div>
+            <nav id='desktopNav'>
+                <ul>
+                    <li><a href="">Lien 1</a></li>
+                    <li><a href="">Lien 2</a></li>
+                    <li><a href="">Lien 3</a></li>
+                    <li><a href="">Lien 4</a></li>
+                </ul>
+            </nav>
             <button>Connection</button>
         </div>
     </header>
+
     <section id="midContent">
         <main>
             <?= $content ?>
@@ -30,5 +49,6 @@
     <footer>
         Le footer
     </footer>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
