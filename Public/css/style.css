@@ -39,24 +39,50 @@ h1, h2, h3, h4 {
 /**************
 *   Template
 **************/
+
+
 #topHeader{
+    position: relative;
+    z-index: 20;
     background-color: #a06200;
     color: white;
     text-align: center;
     font-size: .9rem;
+    box-shadow: 1px -2px 7px 5px rgba(0,0,0,0.63);
 }
 #banner{
+    position: relative;
     background-image: url("../images/tempBan.jpg");
     background-position: center;
     padding: 75px 0 75px 0;
     text-align: center;
 }
+#linksBanner{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+#linksBanner img{
+    width: 35px;
+    height: auto;
+    opacity: .8;
+    filter: grayscale(.9);
+    transition: filter .2s linear, opacity .2s linear;
+}
+#linksBanner img:hover{
+    opacity: 1;
+    filter: grayscale(0);
+}
+
 #navBar{
     background-color: #a06200;
-    padding: 20px;
+    padding: 10px 20px 10px 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items: center;
 }
 #midContent{
     display: flex;
@@ -69,12 +95,30 @@ h1, h2, h3, h4 {
     order: 2;
 }
 #motd{
-    background-color: cadetblue;
+    /*background-color: cadetblue;*/
     padding: 25px;
     text-align: center;
 }
 #desktopNav{
     display: none;
+}
+.ctaButton{
+    padding: 15px 20px 15px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: rgb(0, 162, 38);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: background-color .2s linear;
+}
+.ctaButton:hover{
+    background-color: rgb(0, 198, 46);
+}
+main{
+    background-color:  rgb(255, 249, 236);
 }
 footer{
     padding: 5px;
@@ -95,7 +139,7 @@ nav ul li {
 #togglingMenu nav{
     background-color: white;
     height: 100vh;
-    border-right: 1px solid black;
+    border-right: 1px solid rgb(135, 135, 135);
     padding: 15px;
     display: flex;
     flex-flow: column wrap;
@@ -111,12 +155,19 @@ nav ul li {
     body{
         background-color: #3a1c09;
     }
-    #banner, #navBar, #midContent{
+    #topHeader{
+        position: relative;
+        z-index: 20;
+    }
+    #visuelPage{
         margin-left: auto;
         margin-right: auto;
         width: 90%;
         max-width: 1918px;
-    }    
+        box-shadow: 0px 0px 18px 7px #000000;
+        z-index: 10;
+    }
+      
     #midContent {
         background-color: rgb(255, 249, 236);
         flex-flow: row wrap;
@@ -145,6 +196,14 @@ nav ul li {
     #desktopNav ul li{
         padding-right: 25px;
     }
+    #desktopNav ul li a{
+        text-decoration: none;
+        color: white;
+        transition: color .2s linear;
+    }
+    #desktopNav ul li a:hover{
+        color: rgb(0, 0, 0);
+    }
 }
 
 
@@ -153,9 +212,10 @@ nav ul li {
 **************/
 .cardArticle{
     width: 80%;
-    border: 1px solid black;
+    border: 1px solid rgb(148, 148, 148);
     padding: 0 15px 15px 15px;
     margin-bottom: 25px;
+    background-color: white;
 }
 .infoArticle{
     margin-bottom: 5px;
