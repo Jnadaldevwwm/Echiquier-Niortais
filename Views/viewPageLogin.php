@@ -1,0 +1,13 @@
+<?php   
+    $this->title = 'Connection Administrateur';
+    ?>
+    <h2 class='txtCenter'>Connection à l'interface d'administration : </h2>
+    <div id='formLogin' class='mAuto'>
+        <form action="?action=signUp" method="POST">
+            <label for="login">Nom d'utilisateur : </label>
+            <input type="text" name="login" id="login" required>
+            <label for="mdp">Mot de passe : </label>
+            <input type="password" name="mdp" id="mdp" required>
+            <input type="submit" value="Connection" class='mAuto'>
+        </form>
+    </div>

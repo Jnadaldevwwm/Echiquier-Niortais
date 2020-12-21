@@ -135,6 +135,7 @@ nav ul li {
     position: fixed;
     transform: translateX(-250px);
     transition: transform 1s;
+    z-index: 500;
 }
 #togglingMenu nav{
     background-color: white;
@@ -270,4 +271,37 @@ nav ul li {
     .lienArticle{
         order: 5;
     }
+}
+
+/**************
+*   BackOffice
+**************/
+
+#formLogin{
+    width: 50%;
+    margin-top: 25px;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: white;
+    padding: 25px;
+}
+#formLogin form{
+    display: flex;
+    flex-flow: row wrap;
+}
+#formLogin form *{
+    width: 100%;
+    margin-bottom: 15px;
+}
+#formLogin form input[type='submit']{
+    width: 50%;
+    padding: 10px 0 10px 0;
+    margin-bottom: 0;
+    border: 1px solid rgb(75, 73, 67);
+    border-radius: 25px;
+}
+#formLogin form input[type='text'],#formLogin form input[type='password']{
+    background-color: rgb(255, 249, 236);
+    border: 1px solid rgb(75, 73, 67);
+    padding: 5px;
 }
