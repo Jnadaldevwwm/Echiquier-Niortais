@@ -74,10 +74,13 @@ footer{
     body{
         background-color: #3a1c09;
     }
-    #midContent {
+    #banner, #navBar, #midContent{
         margin-left: auto;
         margin-right: auto;
         width: 90%;
+        max-width: 1918px;
+    }    
+    #midContent {
         background-color: rgb(255, 249, 236);
         flex-flow: row wrap;
     }
@@ -89,8 +92,6 @@ footer{
         width: 80%;
         order: 1;
     }
-
-
 }
 
 
@@ -106,6 +107,7 @@ footer{
 .infoArticle{
     margin-bottom: 5px;
     font-style: italic;
+    font-size: .9rem;
 }
 .cardArticle img{
     width: 100%;
@@ -117,4 +119,42 @@ footer{
 .cardArticle .lienArticle{
     display: block;
     text-align: right;
+}
+.cardHeader{
+    display: none;
+}
+/*** Responsiv Accueil ***/
+@media screen and (min-width: 1025px){
+    .cardHeader{
+        display: block;
+        width: 30%;
+    }
+    .cardBody{
+        width: 70%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .cardArticle{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        padding: 5px;
+    }
+    .cardBody img{
+        display: none;
+    }
+    .cardArticle h3{
+        text-align: left;
+        order: 2;
+    }
+    .infoArticle{
+        text-align: left;
+        order: 3;
+    }
+    .resumeArticle{
+        order: 4;
+    }
+    .lienArticle{
+        order: 5;
+    }
 }
