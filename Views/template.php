@@ -15,10 +15,10 @@
 <div id="togglingMenu" class='togglingMenu hidden'>
         <nav id='dynamicNav'>
             <ul>
-                <li><a href="">Lien 1</a></li>
-                <li><a href="">Lien 2</a></li>
-                <li><a href="">Lien 3</a></li>
-                <li><a href="">Lien 4</a></li>
+            <li><a href="">Accueil</a></li>
+            <li><a href="">Présentation▾</a></li>
+            <li><a href="">Lien 3</a></li>
+            <li><a href="">Contact</a></li>
             </ul>
         </nav>
 </div>
@@ -48,9 +48,19 @@
                 </nav>
                 <?php
                     if(!isset($_SESSION['userToken'])){
-                        echo '<button class="ctaButton">Nous Rejoindre !</button>';
+                        echo '<a href="?action=adminLoginPage"><button class="ctaButton" id="connButton">Se Connecter !</button></a>';
                     } else{
-                        echo '<div>Connecté</div>';
+                        echo '<div id="isConn">
+                                <div class="roundAvatar">
+                                    <img src="images/avatar.jpg" alt="avatar" class="">
+                                </div>
+                            </div>
+                            <nav class="menuProfil hidden">
+                                <ul>
+                                    <li><a href="?action=disconnect">Se déconnecter</a></li>
+                                <ul>
+                            </nav>
+                            ';
                     }
                 ?>
             </div>

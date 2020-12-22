@@ -156,6 +156,49 @@ nav ul li {
     transform: translateX(0);
 }
 
+/*** Connected stuff ***/
+.roundAvatar{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid rgb(222, 255, 222);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.roundAvatar img{
+    width: 55px;
+    height: auto;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    transition: width .2s linear;
+}
+.roundAvatar img:hover{
+    width: 60px;
+}
+.menuProfil{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 200;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 100vh;
+    padding: 15px;
+    transform: translateX(250px);
+    transition: transform 1s;
+}
+.toggleProfilNavAnimation{
+    transform: translateX(0);
+}
+
 /*** Responsive tempalte ***/
 @media screen and (min-width: 1025px){
     body{
@@ -347,9 +390,10 @@ nav ul li {
     color: green;
     transition: color .1s linear;
 }
-#buttonManagementAticle i:hover{
+#buttonManagementAticle a:hover, #buttonManagementAticle a:hover i{
     color: lightgreen;
 }
+
 #buttonManagementAticle a{
     display: flex;
     flex-flow: column wrap;
@@ -357,4 +401,5 @@ nav ul li {
     align-items: center;
     color: black;
     text-decoration: none;
+    transition: color .1s linear;
 }

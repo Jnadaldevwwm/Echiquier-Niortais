@@ -23,4 +23,15 @@
             $user->closeCursor();
             return $result;
         }
+        public function checktoken($token){
+            $sql = "SELECT COUNT(*) as r FROM users WHERE token=?";
+            $result = $this->goQuery($sql,array($token));
+            $return = $result->fetch();
+            $result->closeCursor();
+            if($return['r']==1){
+                return true;
+            } else {
+                return false;
+            }
+        }
     }

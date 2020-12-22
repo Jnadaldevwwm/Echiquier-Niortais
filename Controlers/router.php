@@ -41,6 +41,9 @@
                         case 'articlesManagement':
                             $this->ctrlUsers->articleManagement();
                             break;
+                        case 'disconnect':
+                            $this->ctrlUsers->disconnect();
+                            break;
                         default:
                             $this->ctrlIndex->index();
                             break;

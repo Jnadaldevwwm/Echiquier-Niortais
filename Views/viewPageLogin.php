@@ -1,7 +1,7 @@
 <?php   
-    $this->title = 'Connection Administrateur';
+    $this->title = 'Connection';
     ?>
-    <h2 class='txtCenter'>Connection à l'interface d'administration : </h2>
+    <h2 class='txtCenter'>Se connecter : </h2>
     <div id='formLogin' class='mAuto'>
         <?php
             if(isset($data['error'])&&$data['error']!=false ){

@@ -24,9 +24,3 @@
         "; 
     }
     ?>
-    <!-- <article class='cardArticle mAuto'>
-        <h3>Titre article</h3>
-        <img src="images/img.jpg" alt="">
-        <div class='resumeArticle'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem itaque, deleniti enim ipsum maiores repellat.</div>
-        <a href="" class='lienArticle'>Voir plus</a>
-    </article> -->

@@ -18,7 +18,7 @@ class ControlerUsers{
             $view = new View('pageLogin');
             $view->render(array());  
         }else{
-            header('Location: ?action=indexAdmin');
+            header('Location: ?action=index');
         }
         
     }
@@ -35,8 +35,10 @@ class ControlerUsers{
                 if(password_verify($password,$user['password'])){
                     $error = false;
                     $_SESSION['userToken']=$user['token'];
-                    $view = new View('indexAdmin');
-                    return $view->render(array());
+                    $_SESSION['permission']=$user['role'];
+                    $_SESSION['name']=$user['prenom'];
+                    $_SESSION['avatar']=$user['avatar'];
+                    header('Location: ?action=index');
                 }else{
                     $error = "Mot de passe incorrect.";
                 }
@@ -52,7 +54,7 @@ class ControlerUsers{
     }
 
     public function indexAdmin(){
-        if(isset($_SESSION['userToken'])){
+        if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])){
             $view = new View('indexAdmin');
             return $view->render(array());
         } else{
@@ -61,8 +63,18 @@ class ControlerUsers{
     }
 
     public function articleManagement(){
-        $articles = $this->articles->getAllArticles();
-        $view = new View('articlesManagement');
-        $view->render(array('articles' => $articles));
+        if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])){
+            $articles = $this->articles->getAllArticles();
+            $view = new View('articlesManagement');
+            $view->render(array('articles' => $articles));
+        } else{
+            header('Location: ?action=index');
+        }
+    }
+    public function disconnect(){
+        if(isset($_SESSION)){
+            session_destroy();
+            header('Location: ?action=index');
+        }
     }
 }
