@@ -3,6 +3,13 @@
     ?>
     <h2 class='txtCenter'>Connection à l'interface d'administration : </h2>
     <div id='formLogin' class='mAuto'>
+        <?php
+            if(isset($data['error'])&&$data['error']!=false ){
+                echo "<div id='msgError'>".$data['error']."
+                </div>";
+            }
+        ?>
+        
         <form action="?action=signUp" method="POST">
             <label for="login">Nom d'utilisateur : </label>
             <input type="text" name="login" id="login" required>

@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $this->title ?></title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body>
 <div id="togglingMenu" class='togglingMenu hidden'>
@@ -23,7 +28,7 @@
     <section id="visuelPage">
         <header>
             <div id="banner">
-                <a href="?action='index'"><img src="images/logo.gif" alt="logo echiquier niortais"></a>
+                <a href="?action='index'"><img src="images/logo.gif" alt="logo echiquier niortais" id="logoSite"></a>
                 <div id="linksBanner">
                     <a href="http://www.echecs.asso.fr/"><img src="images/Logo_FFE.jpg" alt="logo fédération française d'echecs"></a>
                     <a href="https://twitter.com/EchiquierNiort?lang=fr"><img src="images/Logo_Twitter.png" alt=""></a>
@@ -35,13 +40,19 @@
                 <div id="hamburger">=</div>
                 <nav id='desktopNav'>
                     <ul>
-                        <li><a href="">Lien 1</a></li>
-                        <li><a href="">Lien 2</a></li>
+                        <li><a href="">Accueil</a></li>
+                        <li><a href="">Présentation▾</a></li>
                         <li><a href="">Lien 3</a></li>
-                        <li><a href="">Lien 4</a></li>
+                        <li><a href="">Contact</a></li>
                     </ul>
                 </nav>
-                <button class="ctaButton">Nous Rejoindre !</button>
+                <?php
+                    if(!isset($_SESSION['userToken'])){
+                        echo '<button class="ctaButton">Nous Rejoindre !</button>';
+                    } else{
+                        echo '<div>Connecté</div>';
+                    }
+                ?>
             </div>
         </header>
 
