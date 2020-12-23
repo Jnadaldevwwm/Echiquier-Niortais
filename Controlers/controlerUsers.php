@@ -34,6 +34,7 @@ class ControlerUsers{
                 //On vérifie que les mot de passe est bon
                 if(password_verify($password,$user['password'])){
                     $error = false;
+                    $_SESSION['login']=$user['login'];
                     $_SESSION['userToken']=$user['token'];
                     $_SESSION['id']=$user['id'];
                     $_SESSION['permission']=$user['permission'];
@@ -94,16 +95,22 @@ class ControlerUsers{
     public function updateProfil($dataUser){
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])){
             $userId = $_SESSION['id'];
-            $this->user->updateUser($userId,$dataUser);
-            session_destroy();
-            session_start();
-            $user = $this->user->getOneUser($userId);
-            $_SESSION['userToken']=$user['token'];
-            $_SESSION['id']=$user['id'];
-            $_SESSION['permission']=$user['permission'];
-            $_SESSION['name']=$user['prenom'];
-            $_SESSION['avatar']=$user['avatar'];
-            header('Location: ?action=viewProfil'); 
+            if(!$this->user->checkLoginExist($dataUser['login'])||$dataUser['login']==$_SESSION['login']){
+                $this->user->updateUser($userId,$dataUser);
+                session_destroy();
+                session_start();
+                $user = $this->user->getOneUser($userId);
+                $_SESSION['login']=$user['login'];
+                $_SESSION['userToken']=$user['token'];
+                $_SESSION['id']=$user['id'];
+                $_SESSION['permission']=$user['permission'];
+                $_SESSION['name']=$user['prenom'];
+                $_SESSION['avatar']=$user['avatar'];
+                header('Location: ?action=viewProfil&statusUpdate=true');
+            } else {
+                header('Location: ?action=viewProfil&statusUpdate=login');
+            }
+             
         }
         
     }

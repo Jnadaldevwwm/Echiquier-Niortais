@@ -2,6 +2,13 @@
     $this->title = 'Profil de '.$user['prenom'];
     ?>
     <h2 class="txtCenter">Mon profil :</h2>
+    <?php
+        if(isset($_GET['statusUpdate'])&&$_GET['statusUpdate']=='login'){
+            echo 'LOGIN EXISTE DEJA';
+        } else if(isset($_GET['statusUpdate'])&&$_GET['statusUpdate']){
+            echo 'PROFIL MIS A JOUR';
+        }
+    ?>
     <form id="formProfil" action="?action=updateProfil" method="POST">
         <label for="login">Nom d'utilisateur :</label>
         <input type="text" name="login" id="login" value="<?= $user['login'] ?>" autocomplete="off">

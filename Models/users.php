@@ -34,6 +34,18 @@
                 return false;
             }
         }
+        public function checkLoginExist($login){
+            $sql ="SELECT COUNT(*) as r FROM users WHERE login=?";
+            $result = $this->goQuery($sql,array($login));
+            $return = $result->fetch();
+            $result->closeCursor();
+            if(intval($return['r'])>0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
         public function getAllUsers(){
             $sql = "SELECT * FROM users u INNER JOIN role r ON u.permission = r.id";
             $result = $this->goQuery($sql);
