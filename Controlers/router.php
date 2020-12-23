@@ -44,6 +44,13 @@
                         case 'usersManagement':
                             $this->ctrlUsers->usersManagement();
                             break;
+                        case 'viewProfil':
+                            $this->ctrlUsers->viewProfil();
+                            break;
+                        case 'updateProfil':
+                            $dataUser = $_POST;
+                            $this->ctrlUsers->updateProfil($dataUser);
+                            break;
                         case 'disconnect':
                             $this->ctrlUsers->disconnect();
                             break;

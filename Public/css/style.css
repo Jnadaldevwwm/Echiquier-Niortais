@@ -171,7 +171,7 @@ nav ul li {
     cursor: pointer;
 }
 #isConn:hover{
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.589);
     background-color: rgba(255, 255, 255, 0.185);
 }
 #isConn span{
@@ -220,6 +220,24 @@ nav ul li {
 }
 .toggleProfilNavAnimation{
     transform: translateX(0);
+}
+/*** Profil ***/
+#formProfil{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+#formProfil *{
+    width: 30%;
+}
+#formProfil input{
+    margin-bottom: 10px;
+}
+#formProfil input[type='submit']{
+    width: 20%;
+}
+#formProfil img{
+    width: 20%;
 }
 
 /*** Responsive tempalte ***/

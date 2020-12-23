@@ -35,6 +35,7 @@ class ControlerUsers{
                 if(password_verify($password,$user['password'])){
                     $error = false;
                     $_SESSION['userToken']=$user['token'];
+                    $_SESSION['id']=$user['id'];
                     $_SESSION['permission']=$user['permission'];
                     $_SESSION['name']=$user['prenom'];
                     $_SESSION['avatar']=$user['avatar'];
@@ -80,6 +81,32 @@ class ControlerUsers{
         }
     }
 
+    public function viewProfil(){
+        if(isset($_SESSION['userToken'])){
+            $user = $this->user->getOneUser($_SESSION['id']);
+            $view = new View('viewProfil');
+            $view->render(array('user'=>$user));
+        } else {
+            header('Location: ?action=index');
+        }
+    }
+
+    public function updateProfil($dataUser){
+        if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])){
+            $userId = $_SESSION['id'];
+            $this->user->updateUser($userId,$dataUser);
+            session_destroy();
+            session_start();
+            $user = $this->user->getOneUser($userId);
+            $_SESSION['userToken']=$user['token'];
+            $_SESSION['id']=$user['id'];
+            $_SESSION['permission']=$user['permission'];
+            $_SESSION['name']=$user['prenom'];
+            $_SESSION['avatar']=$user['avatar'];
+            header('Location: ?action=viewProfil'); 
+        }
+        
+    }
     public function disconnect(){
         if(isset($_SESSION)){
             session_destroy();

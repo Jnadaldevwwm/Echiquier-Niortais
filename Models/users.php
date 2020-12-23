@@ -41,4 +41,15 @@
             $result->closeCursor();
             return $users;
         }
+        public function getOneUser($userId){
+            $sql = "SELECT * FROM users WHERE id =?";
+            $user = $this->goQuery($sql,array($userId));
+            $result = $user->fetch();
+            $user->closeCursor();
+            return $result;
+        }
+        public function updateUser($userId,$dataUser){
+            $sql = "UPDATE users SET login=?, nom=?, prenom=?, avatar=? WHERE id=?";
+            $this->goQuery($sql,array($dataUser['login'],$dataUser['nom'],$dataUser['prenom'],$dataUser['avatar'],$userId));
+        }
     }
