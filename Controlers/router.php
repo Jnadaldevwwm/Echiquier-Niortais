@@ -1,4 +1,5 @@
 <?php 
+    session_start();
 
     require_once '../Controlers/controlerIndex.php';
     require_once '../Controlers/controlerArticle.php';
@@ -15,6 +16,7 @@
             $this->ctrlUsers = new ControlerUsers();
         }
 
+        // Router simple en fonction du paramètre "action" passé en GET.
         public function route(){
             try{
                 if(isset($_GET['action'])){
@@ -26,11 +28,22 @@
                         case 'article':
                             $this->ctrlArticle->pageArticle($_GET['idArticle']);
                             break;
-
-                        case 'signIn':
-                            $this->ctrlUsers->signIn();
+                        case 'adminLoginPage':
+                            $this->ctrlUsers->pageLogin();
                             break;
-
+                        case 'signUp':
+                            $dataConn = $_POST;
+                            $this->ctrlUsers->signUp($dataConn);
+                            break;
+                        case 'indexAdmin':
+                            $this->ctrlUsers->indexAdmin();
+                            break;
+                        case 'articlesManagement':
+                            $this->ctrlUsers->articleManagement();
+                            break;
+                        case 'disconnect':
+                            $this->ctrlUsers->disconnect();
+                            break;
                         default:
                             $this->ctrlIndex->index();
                             break;
@@ -39,7 +52,7 @@
                     $this->ctrlIndex->index();
                 }
             } catch (Exception $e){
-                echo 'OULALALA '.$e->getMessage();
+                echo 'Erreur : '.$e->getMessage();
             }
         }
 
