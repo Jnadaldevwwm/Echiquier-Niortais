@@ -1,5 +1,5 @@
 <?php
-
+  
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +24,7 @@
 </div>
     <div id="topHeader">
         <span>L'Echiquier Niortais - 49 rue de Ribray 7900 Niort - Tel : 06 85 57 74 60 - E-Mail : echiquiers.niortais@gmail.com</span>
+        <?= $_SESSION['permission'] ?>
     </div>
     <section id="visuelPage">
         <header>
@@ -51,13 +52,19 @@
                         echo '<a href="?action=adminLoginPage"><button class="ctaButton" id="connButton">Se Connecter !</button></a>';
                     } else{
                         echo '<div id="isConn">
+                                <span>'.ucfirst($_SESSION["name"]).'</span>
                                 <div class="roundAvatar">
-                                    <img src="images/avatar.jpg" alt="avatar" class="">
+                                    <img src="images/'.$_SESSION['avatar'].'" alt="avatar" class="">
                                 </div>
                             </div>
                             <nav class="menuProfil hidden">
                                 <ul>
                                     <li><a href="?action=disconnect">Se déconnecter</a></li>
+                                    ';
+                                    if($_SESSION['permission']=='1'){
+                                        echo '<li><a href="?action=indexAdmin">Panneau d\'administration</a></li>';
+                                    }
+                                    echo '
                                 <ul>
                             </nav>
                             ';

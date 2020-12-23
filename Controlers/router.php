@@ -39,7 +39,10 @@
                             $this->ctrlUsers->indexAdmin();
                             break;
                         case 'articlesManagement':
-                            $this->ctrlUsers->articleManagement();
+                            $this->ctrlUsers->articlesManagement();
+                            break;
+                        case 'usersManagement':
+                            $this->ctrlUsers->usersManagement();
                             break;
                         case 'disconnect':
                             $this->ctrlUsers->disconnect();

@@ -34,4 +34,11 @@
                 return false;
             }
         }
+        public function getAllUsers(){
+            $sql = "SELECT * FROM users u INNER JOIN role r ON u.permission = r.id";
+            $result = $this->goQuery($sql);
+            $users = $result->fetchAll();
+            $result->closeCursor();
+            return $users;
+        }
     }

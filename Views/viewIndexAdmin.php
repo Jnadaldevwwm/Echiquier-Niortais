@@ -8,6 +8,6 @@
         <a href="?action=articlesManagement">Gérer les articles.</a>
     </li>
     <li>
-        <a href="">Gérer les utilisateurs.</a>
+        <a href="?action=usersManagement">Gérer les utilisateurs.</a>
     </li>
 </ul>

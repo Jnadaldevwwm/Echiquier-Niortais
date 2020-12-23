@@ -15,7 +15,7 @@ hamburger.addEventListener('click', function(e){
     }
 })
 
-const buttonProfil = document.querySelector('.roundAvatar');
+const buttonProfil = document.getElementById('isConn');
 const menuProfil = document.querySelector('.menuProfil');
 buttonProfil.addEventListener('click', function(e){
     e.stopPropagation();

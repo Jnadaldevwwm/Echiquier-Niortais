@@ -35,7 +35,7 @@ class ControlerUsers{
                 if(password_verify($password,$user['password'])){
                     $error = false;
                     $_SESSION['userToken']=$user['token'];
-                    $_SESSION['permission']=$user['role'];
+                    $_SESSION['permission']=$user['permission'];
                     $_SESSION['name']=$user['prenom'];
                     $_SESSION['avatar']=$user['avatar'];
                     header('Location: ?action=index');
@@ -54,7 +54,7 @@ class ControlerUsers{
     }
 
     public function indexAdmin(){
-        if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])){
+        if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $view = new View('indexAdmin');
             return $view->render(array());
         } else{
@@ -62,8 +62,8 @@ class ControlerUsers{
         }
     }
 
-    public function articleManagement(){
-        if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])){
+    public function articlesManagement(){
+        if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $articles = $this->articles->getAllArticles();
             $view = new View('articlesManagement');
             $view->render(array('articles' => $articles));
@@ -71,6 +71,15 @@ class ControlerUsers{
             header('Location: ?action=index');
         }
     }
+
+    public function usersManagement(){
+        if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
+            $users = $this->user->getAllUsers();
+            $view = new View('usersManagement');
+            $view->render(array('users'=>$users));
+        }
+    }
+
     public function disconnect(){
         if(isset($_SESSION)){
             session_destroy();
