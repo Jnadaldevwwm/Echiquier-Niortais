@@ -34,6 +34,12 @@ h1, h2, h3, h4 {
 .dFlex{
     display: flex;
 }
+.successStat{
+    background-color: lightgreen;
+}
+.errorStat{
+    background-color: rgb(255, 130, 130);
+}
 
 
 /**************

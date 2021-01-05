@@ -96,6 +96,13 @@ class ControlerUsers{
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])){
             $userId = $_SESSION['id'];
             if(!$this->user->checkLoginExist($dataUser['login'])||$dataUser['login']==$_SESSION['login']){
+                if(!empty($_FILES['avatar']['name'])){
+                    require "../Controlers/scripts/uploadImage.php";
+                    $dataUser['avatar']=$nomImage;  
+                    if($message!='OK'){
+                        return header('Location: ?action=viewProfil&statusUpdate=upload&messageScript='.$message);
+                    }
+                }
                 $this->user->updateUser($userId,$dataUser);
                 session_destroy();
                 session_start();
@@ -106,9 +113,10 @@ class ControlerUsers{
                 $_SESSION['permission']=$user['permission'];
                 $_SESSION['name']=$user['prenom'];
                 $_SESSION['avatar']=$user['avatar'];
-                header('Location: ?action=viewProfil&statusUpdate=true');
+                return header('Location: ?action=viewProfil&statusUpdate=OK'); 
+                
             } else {
-                header('Location: ?action=viewProfil&statusUpdate=login');
+                return header('Location: ?action=viewProfil&statusUpdate=login');
             }
              
         }

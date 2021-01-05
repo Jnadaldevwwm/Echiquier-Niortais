@@ -61,7 +61,12 @@
             return $result;
         }
         public function updateUser($userId,$dataUser){
-            $sql = "UPDATE users SET login=?, nom=?, prenom=?, avatar=? WHERE id=?";
-            $this->goQuery($sql,array($dataUser['login'],$dataUser['nom'],$dataUser['prenom'],$dataUser['avatar'],$userId));
+            if($dataUser['avatar']!=''){
+                $sql = "UPDATE users SET login=?, nom=?, prenom=?, avatar=? WHERE id=?";
+                return $this->goQuery($sql,array($dataUser['login'],$dataUser['nom'],$dataUser['prenom'],$dataUser['avatar'],$userId));
+            } else {
+                $sql = "UPDATE users SET login=?, nom=?, prenom=? WHERE id=?";
+                return $this->goQuery($sql,array($dataUser['login'],$dataUser['nom'],$dataUser['prenom'],$userId));
+            }
         }
     }

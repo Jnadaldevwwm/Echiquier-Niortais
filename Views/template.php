@@ -55,7 +55,7 @@
                         echo '<div id="isConn">
                                 <span>'.ucfirst($_SESSION["name"]).'</span>
                                 <div class="roundAvatar">
-                                    <img src="images/'.$_SESSION['avatar'].'" alt="avatar" class="">
+                                    <img src="images/uploads/'.$_SESSION['avatar'].'" alt="avatar" class="">
                                 </div>
                             </div>
                             <nav class="menuProfil hidden">
