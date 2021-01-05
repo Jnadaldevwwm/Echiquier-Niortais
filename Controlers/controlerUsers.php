@@ -103,7 +103,11 @@ class ControlerUsers{
             if(!$this->user->checkLoginExist($dataUser['login'])||$dataUser['login']==$_SESSION['login']){
                 if(!empty($_FILES['avatar']['name'])){
                     require "../Controlers/scripts/uploadImage.php";
-                    $dataUser['avatar']=$nomImage;  
+                    $dataUser['avatar']=$nomImage;
+                    if($_SESSION['avatar']!='defaultPp.png'){
+                        unlink('images/uploads/'.$_SESSION['avatar']);   
+                    }
+                     
                     if($message!='OK'){
                         return header('Location: ?action=viewProfil&statusUpdate=upload&messageScript='.$message);
                     }
