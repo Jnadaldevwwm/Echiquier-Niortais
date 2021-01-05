@@ -53,10 +53,14 @@ navPresentation.addEventListener('mouseenter', function(){
     console.log('entre')
     presDisplay.classList.remove('hidden');
     presDisplay.classList.add('visible');
+    function fonctionListenMouse(){
+        
+    }
     document.addEventListener('mousemove', function(e){
         if(e.target.id != 'navPres' && e.target.id != 'presDisplay' && e.target.parentNode.id != 'presDisplay' && e.target.parentNode.parentNode.id != 'presDisplay'){
             presDisplay.classList.remove('visible');
             presDisplay.classList.add('hidden');
+            document.removeEventListener('mousemove', function(){});
         }
     })
 })

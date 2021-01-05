@@ -339,11 +339,15 @@ nav ul li {
     }
     #presDisplay{
         position: absolute;
-        bottom: -35px;
+        display: flex;
+        flex-flow: column wrap;
+        min-width: 150px;
+        bottom: -80px;
         left: 0;
         background-color: white;
     }
-    #presDisplay ul li a {
+    #presDisplay a {
+        padding: 10px;
         color: black;
     }
 }
