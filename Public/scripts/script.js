@@ -31,14 +31,41 @@ if(buttonProfil!=null){
     }
 })}
 document.addEventListener('click',function(e){
-    if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'){
-        togglingMenu.classList.remove('visible');
-        togglingMenu.classList.remove('toggleNavAnimation');
-        togglingMenu.classList.add('hidden');
+    if(togglingMenu!=null){
+        if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'){
+            togglingMenu.classList.remove('visible');
+            togglingMenu.classList.remove('toggleNavAnimation');
+            togglingMenu.classList.add('hidden');
+        }
     }
-    if(!menuProfil.classList.contains('hidden')&&!e.target.classList.contains('menuProfil')){
-        menuProfil.classList.remove('visible');
-        menuProfil.classList.remove('toggleProfilNavAnimation');
-        menuProfil.classList.add('hidden');
+    if(menuProfil!=null){
+        if(!menuProfil.classList.contains('hidden')&&!e.target.classList.contains('menuProfil')){
+            menuProfil.classList.remove('visible');
+            menuProfil.classList.remove('toggleProfilNavAnimation');
+            menuProfil.classList.add('hidden');
+        } 
     }
+})
+
+const navPresentation = document.getElementById('navPres');
+const presDisplay = document.getElementById('presDisplay');
+navPresentation.addEventListener('mouseenter', function(){
+    console.log('entre')
+    presDisplay.classList.remove('hidden');
+    presDisplay.classList.add('visible');
+    document.addEventListener('mousemove', function(e){
+        if(e.target.id != 'navPres' && e.target.id != 'presDisplay' && e.target.parentNode.id != 'presDisplay' && e.target.parentNode.parentNode.id != 'presDisplay'){
+            presDisplay.classList.remove('visible');
+            presDisplay.classList.add('hidden');
+        }
+    })
+})
+// navPresentation.addEventListener('mouseleave', function(){
+//     console.log('leave')
+//     presDisplay.classList.remove('visible');
+//     presDisplay.classList.add('hidden');
+// })
+navPresentation.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log('click')
 })

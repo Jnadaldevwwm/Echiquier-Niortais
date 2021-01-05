@@ -34,6 +34,15 @@ h1, h2, h3, h4 {
 .dFlex{
     display: flex;
 }
+.visible{
+    visibility: visible;
+}
+.hidden{
+    visibility: hidden;
+}
+.pRelativ{
+    position: relative;
+}
 .successStat{
     background-color: lightgreen;
 }
@@ -96,6 +105,7 @@ h1, h2, h3, h4 {
     font-size: 1.1rem;
     height: 75px;
 }
+
 #midContent{
     display: flex;
     flex-flow: column wrap;
@@ -319,13 +329,22 @@ nav ul li {
     #desktopNav ul li{
         padding-right: 25px;
     }
-    #desktopNav ul li a{
+    #desktopNav> ul> li> a{
         text-decoration: none;
         color: white;
         transition: color .2s linear;
     }
     #desktopNav ul li a:hover{
         color: rgb(0, 0, 0);
+    }
+    #presDisplay{
+        position: absolute;
+        bottom: -35px;
+        left: 0;
+        background-color: white;
+    }
+    #presDisplay ul li a {
+        color: black;
     }
 }
 

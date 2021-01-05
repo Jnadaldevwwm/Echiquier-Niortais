@@ -42,7 +42,15 @@
                 <nav id='desktopNav'>
                     <ul>
                         <li><a href="">Accueil</a></li>
-                        <li><a href="">Présentation▾</a></li>
+                        <li class='pRelativ'><a href="" id='navPres'>Présentation▾</a>
+                            <div id='presDisplay' class='hidden'>
+                                
+                                        <a href="">Lien 1</a>
+                                    
+                                        <a href="">Lien 2</a>
+                                 
+                            </div>
+                        </li>
                         <li><a href="">Lien 3</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>
