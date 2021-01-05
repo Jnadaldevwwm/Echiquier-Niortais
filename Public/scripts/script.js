@@ -17,7 +17,8 @@ hamburger.addEventListener('click', function(e){
 
 const buttonProfil = document.getElementById('isConn');
 const menuProfil = document.querySelector('.menuProfil');
-buttonProfil.addEventListener('click', function(e){
+if(buttonProfil!=null){
+    buttonProfil.addEventListener('click', function(e){
     e.stopPropagation();
     if(menuProfil.classList.contains('hidden')){
         menuProfil.classList.remove('hidden');
@@ -28,7 +29,7 @@ buttonProfil.addEventListener('click', function(e){
         menuProfil.classList.remove('toggleProfilNavAnimation');
         menuProfil.classList.add('hidden');
     }
-})
+})}
 document.addEventListener('click',function(e){
     if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'){
         togglingMenu.classList.remove('visible');

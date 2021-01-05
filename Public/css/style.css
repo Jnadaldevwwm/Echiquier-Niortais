@@ -165,6 +165,33 @@ nav ul li {
 }
 
 /*** Connected stuff ***/
+/*** Inscription ***/
+#formInscription{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+#formInscription input{
+    margin-bottom: 15px;
+}
+.iconSignIn{
+    width: 15px;
+    height: 15px;
+}
+#aideBoxPassword{
+    background-color: white;
+    border: dotted 1px black;
+    font-size: .8rem;
+}
+#boxMdp1{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+#boxMdp1>div{
+    margin-bottom: 5px;
+}
 /*** Utilisateurs ***/
 #isConn{
     display: flex;
@@ -450,4 +477,16 @@ nav ul li {
     color: black;
     text-decoration: none;
     transition: color .1s linear;
+}
+/*** MOTD ***/
+#formMotd{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+#formMotd input, #formMotd textarea{
+    margin-bottom: 15px;
+}
+#formMotd textarea{
+    resize: none;
 }

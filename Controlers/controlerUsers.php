@@ -22,6 +22,11 @@ class ControlerUsers{
         }
         
     }
+    public function signInPage(){
+        $view = new View('signInPage');
+        $view->render(array());
+    }
+
     //signUp : Methode de verification et d'initialisation de session à la connection d'un utilisateur. Prend en paramètre $data : les datas en POST envoyés par le formulaire de connection.
     public function signUp($data){
         if(isset($data['mdp'])&& isset($data['login']) && !isset($_SESSION['userToken'])){
