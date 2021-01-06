@@ -53,16 +53,14 @@ navPresentation.addEventListener('mouseenter', function(){
     console.log('entre')
     presDisplay.classList.remove('hidden');
     presDisplay.classList.add('visible');
-    function fonctionListenMouse(){
-        
-    }
-    document.addEventListener('mousemove', function(e){
+    function fonctionListenMouse(e){
+        console.log(e.target.id)
         if(e.target.id != 'navPres' && e.target.id != 'presDisplay' && e.target.parentNode.id != 'presDisplay' && e.target.parentNode.parentNode.id != 'presDisplay'){
             presDisplay.classList.remove('visible');
             presDisplay.classList.add('hidden');
-            document.removeEventListener('mousemove', function(){});
-        }
-    })
+            document.removeEventListener('mousemove', fonctionListenMouse);
+    }}
+    document.addEventListener('mousemove', fonctionListenMouse)
 })
 // navPresentation.addEventListener('mouseleave', function(){
 //     console.log('leave')
