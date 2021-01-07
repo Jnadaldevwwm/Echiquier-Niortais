@@ -3,12 +3,15 @@
     ?>
     <h2 class='txtCenter'>Créer un compte : </h2>
     <form action="?action=signIn" method="POST" id="formInscription">
+        <label for="username">Nom d'utilisateur : </label>
         <input type="text" name="username" id="" placeholder="Nom d'utilisateur" autocomplete='off' required>
+        <label for="nom">Nom : </label>
         <input type="text" name="nom" id="" placeholder="Nom" autocomplete='off' required>
+        <label for="prenom">Prenom : </label>
         <input type="text" name="prenom" id="" placeholder="Prénom" autocomplete='off' required>
         <div id='boxMdp1'>
-            <div id='aideBoxPassword' class='dNone'>Le mot de passe doit contenir :
-                8 caractères minimum <br>
+            <div id='aideBoxPassword' class='dNone'>Le mot de passe doit contenir : <br>
+                8 caractères minimum <br> 
                 au moins 1 majuscule <br>
                 au moins 1 minuscule <br>
                 au moins 1 chiffre <br>

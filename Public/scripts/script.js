@@ -62,11 +62,6 @@ navPresentation.addEventListener('mouseenter', function(){
     }}
     document.addEventListener('mousemove', fonctionListenMouse)
 })
-// navPresentation.addEventListener('mouseleave', function(){
-//     console.log('leave')
-//     presDisplay.classList.remove('visible');
-//     presDisplay.classList.add('hidden');
-// })
 navPresentation.addEventListener('click', function(e){
     e.preventDefault();
     console.log('click')

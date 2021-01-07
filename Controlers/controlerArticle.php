@@ -1,9 +1,10 @@
 <?php
 
+require_once '../Controlers/baseControler.php';
 require_once '../views/view.php';
 require_once '../Models/articles.php';
 
-class ControlerArticle{
+class ControlerArticle extends Controler{
     private $article;
 
     public function __construct(){

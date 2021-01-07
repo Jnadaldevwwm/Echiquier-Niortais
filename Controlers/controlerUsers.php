@@ -1,10 +1,11 @@
 <?php
 
+require_once '../Controlers/baseControler.php';
 require_once '../views/view.php';
 require_once '../Models/users.php';
 require_once '../Models/articles.php';
 
-class ControlerUsers{
+class ControlerUsers extends Controler{
     private $user;
     private $articles;
 
@@ -15,16 +16,18 @@ class ControlerUsers{
 
     public function pageLogin(){
         if(!isset($_SESSION['userToken'])){
+            $motd = self::sidebar();
             $view = new View('pageLogin');
-            $view->render(array());  
+            $view->render(array(),array('motd'=>$motd));  
         }else{
             header('Location: ?action=index');
         }
         
     }
     public function signInPage(){
+        $motd = self::sidebar();
         $view = new View('signInPage');
-        $view->render(array());
+        $view->render(array(),array('motd'=>$motd));
     }
 
     //signUp : Methode de verification et d'initialisation de session à la connection d'un utilisateur. Prend en paramètre $data : les datas en POST envoyés par le formulaire de connection.
@@ -53,7 +56,8 @@ class ControlerUsers{
                 $error = "Nom d'utilisateur incorrect.";
             }
             $view = new View('pageLogin');
-            return $view->render(array('error' => $error ));
+            $motd = self::sidebar();
+            return $view->render(array('error' => $error ),array('motd'=>$motd));
         } else{
             header('Location: ?action=index');
         }
@@ -63,7 +67,8 @@ class ControlerUsers{
     public function indexAdmin(){
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $view = new View('indexAdmin');
-            return $view->render(array());
+            $motd = self::sidebar();
+            return $view->render(array(),array('motd'=>$motd));
         } else{
             header('Location: ?action=index');
         }
@@ -73,7 +78,8 @@ class ControlerUsers{
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $articles = $this->articles->getAllArticles();
             $view = new View('articlesManagement');
-            $view->render(array('articles' => $articles));
+            $motd = self::sidebar();
+            $view->render(array('articles' => $articles),array('motd'=>$motd));
         } else{
             header('Location: ?action=index');
         }
@@ -83,7 +89,8 @@ class ControlerUsers{
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $users = $this->user->getAllUsers();
             $view = new View('usersManagement');
-            $view->render(array('users'=>$users));
+            $motd = self::sidebar();
+            $view->render(array('users'=>$users),array('motd'=>$motd));
         }
     }
 
@@ -91,7 +98,8 @@ class ControlerUsers{
         if(isset($_SESSION['userToken'])){
             $user = $this->user->getOneUser($_SESSION['id']);
             $view = new View('viewProfil');
-            $view->render(array('user'=>$user));
+            $motd = self::sidebar();
+            $view->render(array('user'=>$user),array('motd'=>$motd));
         } else {
             header('Location: ?action=index');
         }

@@ -1,9 +1,10 @@
 <?php
 
+require_once '../Controlers/baseControler.php';
 require_once '../views/view.php';
 require_once '../Models/articles.php';
 
-class ControlerIndex{
+class ControlerIndex extends Controler{
 
     private $articles;
 
@@ -12,7 +13,8 @@ class ControlerIndex{
     }
     public function index(){
         $articles = $this->articles->getAllArticles();
+        $motd = self::sidebar();
         $view = new View('Index');
-        $view->render(array('articles'=>$articles));
+        $view->render(array('articles'=>$articles),array('motd'=>$motd));
     }
 }

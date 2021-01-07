@@ -5,18 +5,21 @@
     require_once '../Controlers/controlerArticle.php';
     require_once '../Controlers/controlerUsers.php';
     require_once '../Controlers/controlerMotd.php';
+    require_once '../Controlers/baseControler.php';
 
     class Router{
         private $ctrlIndex;
         private $ctrlArticle;
         private $ctrlUsers;
         private $ctrlMotd;
+        private $ctrlBase;
 
         public function __construct(){
             $this->ctrlIndex = new ControlerIndex();
             $this->ctrlArticle = new ControlerArticle();
             $this->ctrlUsers = new ControlerUsers();
             $this->ctrlMotd = new ControlerMotd();
+            $this->ctrlBase = new Controler();
         }
 
         // Router simple en fonction du paramètre "action" passé en GET.
