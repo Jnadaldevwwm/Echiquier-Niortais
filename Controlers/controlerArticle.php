@@ -5,7 +5,7 @@ require_once '../views/view.php';
 require_once '../Models/articles.php';
 
 class ControlerArticle extends Controler{
-    private $article;
+    private $articles;
 
     public function __construct(){
         $this->articles = new Articles();
@@ -23,7 +23,13 @@ class ControlerArticle extends Controler{
         $motd = self::sidebar();
         $view->render(array(),array('motd'=>$motd));
     }
-    public function createArticle($data){
-        
+    public function createArticle(){
+        $data = $_POST;
+        $auteurArticle = $_SESSION['id'];
+        $dateArticle = date("Y-m-d H:i:s");
+        $titreArticle = $data['titreArticle'];
+        $contenuArticle = $data['contentArticle'];
+        $imageEntete = "l'image";
+        $this->articles->addArticle($titreArticle,$dateArticle,$imageEntete,$contenuArticle,$auteurArticle);
     }
 }

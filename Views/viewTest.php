@@ -1,1 +1,1 @@
-<?= implode('/',$data) ?>
+<?= $data['titreArticle'] ?>

@@ -53,6 +53,9 @@
                         case 'newArticle':
                             $this->ctrlArticle->pageNewArticle();
                             break;
+                        case 'addArticle':
+                            $this->ctrlArticle->createArticle();
+                            break;
                         case 'usersManagement':
                             $this->ctrlUsers->usersManagement();
                             break;

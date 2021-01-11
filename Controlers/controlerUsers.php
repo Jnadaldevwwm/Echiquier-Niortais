@@ -47,6 +47,7 @@ class ControlerUsers extends Controler{
                     $_SESSION['id']=$user['id'];
                     $_SESSION['permission']=$user['permission'];
                     $_SESSION['name']=$user['prenom'];
+                    $_SESSION['fName']=$user['nom'];
                     $_SESSION['avatar']=$user['avatar'];
                     header('Location: ?action=index');
                 }else{
@@ -129,6 +130,7 @@ class ControlerUsers extends Controler{
                 $_SESSION['id']=$user['id'];
                 $_SESSION['permission']=$user['permission'];
                 $_SESSION['name']=$user['prenom'];
+                $_SESSION['fName']=$user['nom'];
                 $_SESSION['avatar']=$user['avatar'];
                 return header('Location: ?action=viewProfil&statusUpdate=OK'); 
                 

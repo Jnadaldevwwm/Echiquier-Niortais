@@ -20,6 +20,10 @@
             return $result;
         }
 
+        public function addArticle($titre,$date,$image,$contenu,$auteur){
+            $sql = "INSERT INTO articles VALUES(NULL,?,?,?,?,?)";
+            $result = $this->goQuery($sql,array($titre,$date,$image,$contenu,$auteur));
+        }
         public function deleteArticle($idArticle){
             
         }

@@ -3,7 +3,7 @@
 ?>
 
 LE NOUVEL ARTICLE
-<form action="?action=test"id="formArticle" method="POST">
+<form action="?action=addArticle"id="formArticle" method="POST">
     <label for="titreArticle">Titre de l'article : </label>
     <input type="text" name="titreArticle" id="titreArticle" placeholder="titre">
     <label for="imageEntete">Image d'illustration : </label>
