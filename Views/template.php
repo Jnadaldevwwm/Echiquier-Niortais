@@ -10,6 +10,7 @@
     <title><?= $this->title ?></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/quill.snow.css">
 </head>
 <body>
 <div id="togglingMenu" class='togglingMenu hidden'>
@@ -87,9 +88,10 @@
                 <?= $content ?>
             </main>
             <aside>
-                <div id="motd">
+               <?= $aside ?>
+                <!-- <div id="motd">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsam totam quasi libero. Ad voluptates voluptatibus corporis tenetur quia molestias excepturi accusamus officiis velit. Quibusdam, asperiores. Maiores est quidem quod consequuntur beatae inventore dolorem nobis minus magnam eaque? Explicabo, dolor nam sapiente error repellendus eos tempore voluptatibus totam enim quae.
-                </div>
+                </div> -->
             </aside>
         </section>
     </section>

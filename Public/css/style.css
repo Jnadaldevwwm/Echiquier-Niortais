@@ -513,3 +513,16 @@ nav ul li {
 #formMotd textarea{
     resize: none;
 }
+/*** Article Editeur ***/
+.standalone-container {
+    margin: 50px auto;
+    max-width: 720px;
+  }
+#snow-container {
+    height: 350px;
+  }
+#formArticle{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}

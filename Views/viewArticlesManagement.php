@@ -40,7 +40,7 @@
 </table>
 
 <div id='buttonManagementAticle' class='txtCenter'>
-    <a href="">
+    <a href="?action=newArticle">
         <i class="fas fa-plus-circle fa-2x"></i>
         Ajouter un article
     </a>
