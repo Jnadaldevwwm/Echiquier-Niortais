@@ -14,6 +14,16 @@ class ControlerArticle extends Controler{
     public function pageArticle($idArticle){
         $article = $this->articles->getArticleById($idArticle);
         $view = new View('Article');
-        $view->render(array('article'=>$article));
+        $motd = self::sidebar();
+        $view->render(array('article'=>$article),array('motd'=>$motd));
+    }
+
+    public function pageNewArticle(){
+        $view = new View('pageNewArticle');
+        $motd = self::sidebar();
+        $view->render(array(),array('motd'=>$motd));
+    }
+    public function createArticle($data){
+        
     }
 }

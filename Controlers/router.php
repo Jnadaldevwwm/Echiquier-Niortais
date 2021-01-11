@@ -50,6 +50,9 @@
                         case 'articlesManagement':
                             $this->ctrlUsers->articlesManagement();
                             break;
+                        case 'newArticle':
+                            $this->ctrlArticle->pageNewArticle();
+                            break;
                         case 'usersManagement':
                             $this->ctrlUsers->usersManagement();
                             break;
@@ -69,6 +72,9 @@
                             break;
                         case 'disconnect':
                             $this->ctrlUsers->disconnect();
+                            break;
+                        case 'test':
+                            $this->ctrlIndex->test();
                             break;
                         default:
                             $this->ctrlIndex->index();

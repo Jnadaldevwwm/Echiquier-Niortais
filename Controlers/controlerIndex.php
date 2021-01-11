@@ -17,4 +17,10 @@ class ControlerIndex extends Controler{
         $view = new View('Index');
         $view->render(array('articles'=>$articles),array('motd'=>$motd));
     }
+    public function test(){
+        $data = $_POST;
+        $motd = self::sidebar();
+        $view = new View('Test');
+        $view->render(array('data'=>$data),array('motd'=>$motd));
+    }
 }
