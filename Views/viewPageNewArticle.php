@@ -3,11 +3,11 @@
 ?>
 
 LE NOUVEL ARTICLE
-<form action="?action=addArticle"id="formArticle" method="POST">
+<form enctype="multipart/form-data" action="?action=addArticle"id="formArticle" method="POST">
     <label for="titreArticle">Titre de l'article : </label>
     <input type="text" name="titreArticle" id="titreArticle" placeholder="titre">
-    <label for="imageEntete">Image d'illustration : </label>
-    <input type="file" name="imageEntete" id="imageEntete">
+    <label for="avatar">Image d'illustration : </label>
+    <input type="file" name="avatar" id="avatar">
     <input type="hidden" name="contentArticle" id="contentArticle">
     <div class="standalone-container">
         <div id="snow-container"></div>

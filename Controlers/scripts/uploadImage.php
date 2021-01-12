@@ -2,7 +2,7 @@
     
     // Constantes
     define('TARGET', 'images/uploads/');    // Repertoire cible
-    define('MAX_SIZE', 100000);    // Taille max en octets du fichier
+    define('MAX_SIZE', 10000000);    // Taille max en octets du fichier
     define('WIDTH_MAX', 800);    // Largeur max de l'image en pixels
     define('HEIGHT_MAX', 800);    // Hauteur max de l'image en pixels
     
@@ -24,6 +24,7 @@
     // On verifie si le champ est rempli
     if( !empty($_FILES['avatar']['name']) )
     {
+        echo $_FILES['avatar']['name'].'22';
         // Recuperation de l'extension du fichier
         $extension  = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
     
@@ -37,7 +38,7 @@
         if($infosImg[2] >= 1 && $infosImg[2] <= 14)
         {
             // On verifie les dimensions et taille de l'image
-            if(($infosImg[0] <= WIDTH_MAX) && ($infosImg[1] <= HEIGHT_MAX) && (filesize($_FILES['fichier']['tmp_name']) <= MAX_SIZE))
+            if(($infosImg[0] <= WIDTH_MAX) && ($infosImg[1] <= HEIGHT_MAX) && (filesize($_FILES['avatar']['tmp_name']) <= MAX_SIZE))
             {
             // Parcours du tableau d'erreurs
             if(isset($_FILES['avatar']['error']) 
@@ -86,3 +87,5 @@
         $message = 'Veuillez remplir le formulaire svp !';
     }
     }
+    echo $message;
+    echo $infosImg[0].' '.$infosImg[1];

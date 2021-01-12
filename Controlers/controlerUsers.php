@@ -111,6 +111,8 @@ class ControlerUsers extends Controler{
             $userId = $_SESSION['id'];
             if(!$this->user->checkLoginExist($dataUser['login'])||$dataUser['login']==$_SESSION['login']){
                 if(!empty($_FILES['avatar']['name'])){
+                    define('WIDTH_MAX', 800);    // Largeur max de l'image en pixels
+                    define('HEIGHT_MAX', 800);    // Hauteur max de l'image en pixels
                     require "../Controlers/scripts/uploadImage.php";
                     $dataUser['avatar']=$nomImage;
                     if($_SESSION['avatar']!='defaultPp.png'){
