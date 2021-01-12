@@ -5,9 +5,10 @@
     <img src="images/<?=$article['image']?>" alt="">
 
 <?php    
-    require '../vendor/autoload.php';
-    $quill = new \DBlackborough\Quill\Render($article['contenu']);
-    $result = $quill->render();
-    echo $result;
-    //render($article['content']);
+    echo $article['contenu'];
+    // require '../vendor/autoload.php';
+    // $quill = new \DBlackborough\Quill\Render($article['contenu']);
+    // $result = $quill->render();
+    // echo $result;
+    // //render($article['content']);
     ?>

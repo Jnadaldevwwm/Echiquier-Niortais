@@ -47,7 +47,8 @@ LE NOUVEL ARTICLE
     formArticle.onsubmit = function(e){
         
         var contentArticle = document.querySelector('#contentArticle');
-        contentArticle.value = JSON.stringify(quill.getContents());
+        //contentArticle.value = JSON.stringify(quill.getContents());
+        contentArticle.value = quill.root.innerHTML;
         console.log(contentArticle.value);
     }
 </script>
