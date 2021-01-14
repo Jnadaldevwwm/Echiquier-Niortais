@@ -30,7 +30,7 @@
                     <a href=''>
                         <i class='far fa-edit' title='Modifier'></i>
                     </a>
-                    <a href=''>
+                    <a href='?action=deleteArticle&idArticle=".$article['id']."' class='bDelete' data-id=".$article['id'].">
                         <i class='fas fa-trash' title='Supprimer'></i>
                     </a>
                 </td>";
@@ -45,3 +45,4 @@
         Ajouter un article
     </a>
 </div>
+<script src="scripts/scriptArticleManag.js"></script>

@@ -56,6 +56,9 @@
                         case 'addArticle':
                             $this->ctrlArticle->createArticle();
                             break;
+                        case 'deleteArticle':
+                            $this->ctrlArticle->deleteArticle($_GET['idArticle']);
+                            break;
                         case 'usersManagement':
                             $this->ctrlUsers->usersManagement();
                             break;

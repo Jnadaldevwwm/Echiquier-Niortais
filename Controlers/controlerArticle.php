@@ -37,4 +37,8 @@ class ControlerArticle extends Controler{
         $imageEntete = $nomImage;
         $this->articles->addArticle($titreArticle,$dateArticle,$imageEntete,$contenuArticle,$auteurArticle);
     }
+    public function deleteArticle($idArticle){
+        $this->articles->removeArticle($idArticle);
+        header('Location:?action=articlesManagement');
+    }
 }

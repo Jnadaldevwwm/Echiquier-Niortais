@@ -27,4 +27,8 @@
         public function deleteArticle($idArticle){
             
         }
+        public function removeArticle($idArticle){
+            $sql = "DELETE FROM articles WHERE id=?";
+            $result = $this->goQuery($sql, array($idArticle));
+        }
     }
