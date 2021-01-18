@@ -24,9 +24,7 @@
             $sql = "INSERT INTO articles VALUES(NULL,?,?,?,?,?)";
             $result = $this->goQuery($sql,array($titre,$date,$image,$contenu,$auteur));
         }
-        public function deleteArticle($idArticle){
-            
-        }
+
         public function removeArticle($idArticle){
             $sql = "DELETE FROM articles WHERE id=?";
             $result = $this->goQuery($sql, array($idArticle));

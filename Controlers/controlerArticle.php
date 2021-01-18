@@ -33,8 +33,11 @@ class ControlerArticle extends Controler{
             define('WIDTH_MAX', 2000);    // Largeur max de l'image en pixels
             define('HEIGHT_MAX', 2000);    // Hauteur max de l'image en pixels
             require "../Controlers/scripts/uploadImage.php";
+            $imageEntete = $nomImage;
+        } else {
+            $imageEntete = 'defaultPp.png';
         }
-        $imageEntete = $nomImage;
+        
         $this->articles->addArticle($titreArticle,$dateArticle,$imageEntete,$contenuArticle,$auteurArticle);
     }
     public function deleteArticle($idArticle){

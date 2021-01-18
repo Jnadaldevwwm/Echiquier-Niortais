@@ -424,6 +424,29 @@ nav ul li {
         order: 5;
     }
 }
+/**************
+*   Article
+**************/
+#unArticle h2{
+    text-align: center;
+}
+#unArticle img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+/*** Rendu Quill ***/
+.ql-size-small{
+    font-size: 0.75em;
+}
+.ql-size-large{
+    font-size: 1.5em;
+}
+.ql-size-huge{
+    font-size: 2.5em;
+}
+
 
 /**************
 *   BackOffice
