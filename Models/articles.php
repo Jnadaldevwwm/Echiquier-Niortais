@@ -46,4 +46,23 @@
             $sql = "DELETE FROM articles WHERE id=?";
             $result = $this->goQuery($sql, array($idArticle));
         }
+
+        public function searchArticle($keyWords){
+            $searchTerms = explode(' ', $keyWords); // on transforme chaine en tableau
+            $searchTermBits = array();
+            $searchTermBits2 = array();
+            foreach ($searchTerms as $term) {   // pour chaque mot du tableau
+                $term = trim($term);    // supprime les caractère invisible
+                if (!empty($term)) {    
+                    $searchTermBits[] = "titre LIKE '%$term%'"; // on ajoute dans un tableau autant de like que de mots différents
+                    $searchTermBits2[] = "contenu LIKE '%$term%'";
+                }
+            }
+            $sql = "SELECT * FROM articles WHERE ".implode(' AND ', $searchTermBits)." OR ".implode(' OR ', $searchTermBits2);    // on transforme notre tableau en chaine ou chaque élément sera séparé par une AND 
+
+            $articles = $this->goQuery($sql);
+            $result = $articles->fetchAll();
+            $articles->closeCursor();
+            return $result;
+        }
     }

@@ -44,4 +44,13 @@ class ControlerArticle extends Controler{
         $this->articles->removeArticle($idArticle);
         header('Location:?action=articlesManagement');
     }
+    public function searchArticle(){
+        if($_POST){
+            $keyWords = $_POST['search'];
+        }
+        $articles = $this->articles->searchArticle($keyWords);
+        $view = new View('resultatRecherche');
+        $motd = self::sidebar();
+        $view->render(array('articles'=>$articles,'keyWords'=>$keyWords),array('motd'=>$motd));
+    }
 }

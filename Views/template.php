@@ -92,6 +92,13 @@
                     <div id="motdZ">
                         <?= $aside ?>
                     </div>
+                    <div id="search">
+                        <h4 class="txtCenter">Rechercher un article : </h4>
+                        <form action="?action=search" method="POST" class='txtCenter'>
+                            <input type="text" name="search" id="search" autocomplete='off'>
+                            <input type="submit" value="Chercher">
+                        </form>
+                    </div>
                     <div id="tweeter">
                         <h3 class='txtCenter'>Dernier Tweet : </h3>
                         <a class="twitter-timeline" href="https://twitter.com/EchiquierNiort?ref_src=twsrc%5Etfw" data-tweet-limit="1">Tweets by EchiquierNiort</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -46,6 +46,9 @@
                         case 'indexAdmin':
                             $this->ctrlUsers->indexAdmin();
                             break;
+                        case 'search':
+                            $this->ctrlArticle->searchArticle();
+                            break;
                         case 'articlesManagement':
                             $this->ctrlUsers->articlesManagement();
                             break;
