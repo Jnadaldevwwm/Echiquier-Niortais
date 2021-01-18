@@ -3,7 +3,7 @@
     if(empty($articles)){
         echo '<h3 class="txtCenter">Aucun résultat trouvé</h3>';
     } else {
-        echo '<h3 class="txtCenter">Résultat pour "'.$keyWords.'" : </h3>';
+        echo '<h3 class="txtCenter">Résultat recherche <i> "'.$keyWords.'"</i> : </h3><hr/><br><br>';
         foreach ($articles as $article) {
         echo "<article class='cardArticle mAuto'>
                 <div class='cardHeader'>

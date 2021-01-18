@@ -42,7 +42,7 @@
                 <div id="hamburger">=</div>
                 <nav id='desktopNav'>
                     <ul>
-                        <li><a href="">Accueil</a></li>
+                        <li><a href="?action=index">Accueil</a></li>
                         <li class='pRelativ'><a href="" id='navPres'>Présentation▾</a>
                             <div id='presDisplay' class='hidden'>
                                 

@@ -12,7 +12,6 @@
         <td>Action</td>
     </tr>
     <?php
-
     foreach($data['users'] as $user){
         echo "<tr>
                 <td>"
@@ -28,7 +27,7 @@
                     .$user['nom'].
                 "</td>
                 <td>"
-                    .$user['denomination'].
+                    .$data['users'][0]['name'].
                 "</td>
                 <td> 
                     <a href=''>
