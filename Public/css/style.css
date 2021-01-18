@@ -366,7 +366,7 @@ nav ul li {
         color: white;
         transition: color .2s linear;
     }
-    #desktopNav ul li a:hover{
+    #desktopNav> ul> li> a:hover{
         color: rgb(0, 0, 0);
     }
     #presDisplay{
@@ -381,6 +381,12 @@ nav ul li {
     #presDisplay a {
         padding: 10px;
         color: black;
+        text-decoration: none;
+        transition: background-color .3s;
+    }
+    #presDisplay a:hover {
+        background-color: black;
+        color: white;
     }
     #tweeter{
         display: block;

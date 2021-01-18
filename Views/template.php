@@ -43,16 +43,17 @@
                 <nav id='desktopNav'>
                     <ul>
                         <li><a href="?action=index">Accueil</a></li>
-                        <li class='pRelativ'><a href="" id='navPres'>Présentation▾</a>
+                        <li class='pRelativ'>
+                            <a href="" id='navPres'>Présentation▾</a>
                             <div id='presDisplay' class='hidden'>
                                 
-                                        <a href="">Lien 1</a>
+                                        <a href="" class='lienDeroule'>Lien 1</a>
                                     
-                                        <a href="">Lien 2</a>
+                                        <a href="" class='lienDeroule'>Lien 2</a>
                                  
                             </div>
                         </li>
-                        <li><a href="">Lien 3</a></li>
+                        <li><a href="">Tournois</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>
                 </nav>
