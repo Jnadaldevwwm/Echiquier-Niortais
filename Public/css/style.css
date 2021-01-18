@@ -119,7 +119,7 @@ h1, h2, h3, h4 {
 
 #midContent{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
 }
 #midContent aside{
     order: 1;
