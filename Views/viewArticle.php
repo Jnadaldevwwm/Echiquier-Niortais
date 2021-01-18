@@ -7,6 +7,8 @@
             echo '<img src="images/uploads/'.$article['image'].'" alt="">';
         }
         ?>
-        
-    <?= $article['contenu']; ?>
+        <div class="contenuArticle">
+            <?= $article['contenu']; ?>
+        </div>
+    
 </section>

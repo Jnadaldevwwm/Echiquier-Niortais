@@ -88,10 +88,15 @@
                 <?= $content ?>
             </main>
             <aside>
-               <?= $aside ?>
-                <!-- <div id="motd">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsam totam quasi libero. Ad voluptates voluptatibus corporis tenetur quia molestias excepturi accusamus officiis velit. Quibusdam, asperiores. Maiores est quidem quod consequuntur beatae inventore dolorem nobis minus magnam eaque? Explicabo, dolor nam sapiente error repellendus eos tempore voluptatibus totam enim quae.
-                </div> -->
+                <section>
+                    <div id="motdZ">
+                        <?= $aside ?>
+                    </div>
+                    <div id="tweeter">
+                        <h3 class='txtCenter'>Dernier Tweet : </h3>
+                        <a class="twitter-timeline" href="https://twitter.com/EchiquierNiort?ref_src=twsrc%5Etfw" data-tweet-limit="1">Tweets by EchiquierNiort</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </section>
             </aside>
         </section>
     </section>
