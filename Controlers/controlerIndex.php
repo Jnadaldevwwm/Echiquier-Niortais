@@ -12,10 +12,22 @@ class ControlerIndex extends Controler{
         $this->articles = new Articles();
     }
     public function index(){
-        $articles = $this->articles->getAllArticles();
+        if(isset($_GET['page']) && !empty($_GET['page'])){
+            $currentPage = (int) strip_tags($_GET['page']);
+        }else{
+            $currentPage = 1;
+        }
+        $nbArticles = (int)$this->articles->countAllArticles();
+        $parPage = 2;
+        $nbPages = ceil($nbArticles/$parPage);
+        $premier = ($currentPage * $parPage) - $parPage;
+        $articles = $this->articles->getArticlesPage($premier,$parPage);
+
+        $pagination = array('currentPage'=>$currentPage,'pages'=>$nbPages);
+
         $motd = self::sidebar();
         $view = new View('Index');
-        $view->render(array('articles'=>$articles),array('motd'=>$motd));
+        $view->render(array('articles'=>$articles,'pagination'=>$pagination),array('motd'=>$motd));
     }
     public function test(){
         $data = $_POST;

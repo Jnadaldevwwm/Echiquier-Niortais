@@ -19,6 +19,23 @@
             $article->closeCursor();
             return $result;
         }
+        public function countAllArticles(){
+            $sql = 'SELECT COUNT(*) AS nb_articles FROM articles';
+            $nbArticle = $this->goQuery($sql);
+            $result = $nbArticle->fetch();
+            $nbArticle->closeCursor();
+            return $result['nb_articles'];
+        }
+        public function getArticlesPage($premierArt,$artParPage){
+            $sql = "SELECT * FROM articles ORDER BY date DESC LIMIT :premier, :parpage";
+            $result = $this->getDb()->prepare($sql);
+            $result->bindParam(':premier',$premierArt, PDO::PARAM_INT);
+            $result->bindParam(':parpage',$artParPage, PDO::PARAM_INT);
+            $result->execute();
+            $articles = $result->fetchAll();
+            $result->closeCursor();
+            return $articles;
+        }
 
         public function addArticle($titre,$date,$image,$contenu,$auteur){
             $sql = "INSERT INTO articles VALUES(NULL,?,?,?,?,?)";

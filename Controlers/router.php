@@ -30,7 +30,6 @@
                         case 'index':
                             $this->ctrlIndex->index();
                             break;
-                        
                         case 'article':
                             $this->ctrlArticle->pageArticle($_GET['idArticle']);
                             break;

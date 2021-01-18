@@ -60,7 +60,12 @@ h1, h2, h3, h4 {
 /**************
 *   Template
 **************/
-
+#visuelPage{
+    min-height: 500px;
+}
+#main{
+    min-height: fit-content;
+}
 
 #topHeader{
     position: relative;
@@ -375,7 +380,11 @@ nav ul li {
     font-size: .9rem;
 }
 .cardArticle img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
+    max-width: 450px;
     height: auto;
 }
 .cardArticle h3{
@@ -446,6 +455,16 @@ nav ul li {
 .ql-size-huge{
     font-size: 2.5em;
 }
+/*** Pagination ***/
+.pagination{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.pagination *{
+    margin-right: 2px;
+}
+
 
 
 /**************
