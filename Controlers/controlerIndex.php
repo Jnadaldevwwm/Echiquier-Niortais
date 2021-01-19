@@ -18,7 +18,7 @@ class ControlerIndex extends Controler{
             $currentPage = 1;
         }
         $nbArticles = (int)$this->articles->countAllArticles();
-        $parPage = 2;
+        $parPage = 5;
         $nbPages = ceil($nbArticles/$parPage);
         $premier = ($currentPage * $parPage) - $parPage;
         $articles = $this->articles->getArticlesPage($premier,$parPage);

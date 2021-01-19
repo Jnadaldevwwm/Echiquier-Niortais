@@ -39,10 +39,11 @@ class ControlerArticle extends Controler{
         }
         
         $this->articles->addArticle($titreArticle,$dateArticle,$imageEntete,$contenuArticle,$auteurArticle);
+        header('Location:?action=articlesManagement');
     }
     public function deleteArticle($idArticle){
         $this->articles->removeArticle($idArticle);
-        header('Location:?action=articlesManagement');
+        //header('Location:?action=articlesManagement');
     }
     public function searchArticle(){
         if($_POST){

@@ -27,7 +27,7 @@
             return $result['nb_articles'];
         }
         public function getArticlesPage($premierArt,$artParPage){
-            $sql = "SELECT * FROM articles ORDER BY date DESC LIMIT :premier, :parpage";
+            $sql = "SELECT a.id as id, a.titre as titre, a.date as date, a.image as image, a.contenu as contenu, u.prenom as prenomAuteur, u.nom as nomAuteur FROM articles a INNER JOIN users u ON a.auteur = u.id ORDER BY date DESC LIMIT :premier, :parpage";
             $result = $this->getDb()->prepare($sql);
             $result->bindParam(':premier',$premierArt, PDO::PARAM_INT);
             $result->bindParam(':parpage',$artParPage, PDO::PARAM_INT);
