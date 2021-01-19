@@ -475,9 +475,39 @@ nav ul li {
     margin-right: auto;
     max-width: 90%;
 }
-.contenuArticle{
+#contenuArticle{
     padding: 10px 5% 10px 5%;
 }
+#contenuArticle img{
+    max-width: 60%;
+    cursor: pointer;
+}
+#imgViewer{
+    background-color: rgba(0, 0, 0, 0.450);
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+#imgViewer img{
+    max-height: 100vh;
+    transform: scale(0);
+    animation: .3s ease-in-out apparitionImg forwards;
+}
+@keyframes apparitionImg {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
 /*** Rendu Quill ***/
 .ql-size-small{
     font-size: 0.75em;

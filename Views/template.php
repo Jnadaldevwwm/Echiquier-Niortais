@@ -18,7 +18,8 @@
             <ul>
             <li><a href="">Accueil</a></li>
             <li><a href="">Présentation▾</a></li>
-            <li><a href="">Lien 3</a></li>
+            <li><a href="">Tournois</a></li>
+            <li><a href="">Evènements</a></li>
             <li><a href="">Contact</a></li>
             </ul>
         </nav>
@@ -54,6 +55,7 @@
                             </div>
                         </li>
                         <li><a href="">Tournois</a></li>
+                        <li><a href="">Evènements</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>
                 </nav>

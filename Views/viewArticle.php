@@ -7,8 +7,10 @@
             echo '<img src="images/uploads/'.$article['image'].'" alt="">';
         }
         ?>
-        <div class="contenuArticle">
+        <div id="contenuArticle">
             <?= $article['contenu']; ?>
         </div>
-    
+        <div id='imgViewer' class='dNone'></div>
 </section>
+
+<script src="scripts/scriptImageArticle.js"></script>
