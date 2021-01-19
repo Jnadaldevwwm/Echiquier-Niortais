@@ -99,18 +99,26 @@
             <aside>
                 <section>
                     <div id="motdZ">
+                        <br>
                         <?= $aside ?>
                     </div>
-                    <div id="search">
+                    <hr>
+                    <div id="searchZ">
                         <h4 class="txtCenter">Rechercher un article : </h4>
+                        <br>
                         <form action="?action=search" method="POST" class='txtCenter'>
                             <input type="text" name="search" id="search" autocomplete='off'>
-                            <input type="submit" value="Chercher">
+                            <input type="submit" id="searchSubmit" value="Chercher">
                         </form>
                     </div>
+                    <hr>
                     <div id="tweeter">
                         <h3 class='txtCenter'>Derniers Tweets : </h3>
-                        <a class="twitter-timeline" data-height="500" href="https://twitter.com/EchiquierNiort?ref_src=twsrc%5Etfw">Tweets by EchiquierNiort</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <br>
+                        <div id="tweetBox">
+                           <a class="twitter-timeline" data-height="500" href="https://twitter.com/EchiquierNiort?ref_src=twsrc%5Etfw">Tweets by EchiquierNiort</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                        </div>
+                        
                     </div>
                 </section>
             </aside>

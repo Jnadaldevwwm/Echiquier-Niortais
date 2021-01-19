@@ -46,12 +46,16 @@ class ControlerArticle extends Controler{
         //header('Location:?action=articlesManagement');
     }
     public function searchArticle(){
-        if($_POST){
+
+        if(isset($_POST['search']) && !empty($_POST['search'])){
             $keyWords = $_POST['search'];
+            $articles = $this->articles->searchArticle($keyWords);
+            $view = new View('resultatRecherche');
+            $motd = self::sidebar();
+            $view->render(array('articles'=>$articles,'keyWords'=>$keyWords),array('motd'=>$motd));
+        } else {
+            header('Location:?action=index');
         }
-        $articles = $this->articles->searchArticle($keyWords);
-        $view = new View('resultatRecherche');
-        $motd = self::sidebar();
-        $view->render(array('articles'=>$articles,'keyWords'=>$keyWords),array('motd'=>$motd));
+        
     }
 }

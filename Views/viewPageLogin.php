@@ -1,7 +1,7 @@
 <?php   
     $this->title = 'Connection';
     ?>
-    <h2 class='txtCenter'>Se connecter : </h2>
+    <h1 class='txtCenter'>Se connecter : </h1>
     <div id='formLogin' class='mAuto'>
         <?php
             if(isset($data['error'])&&$data['error']!=false ){

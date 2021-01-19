@@ -13,12 +13,15 @@
 body{
     margin: 0;
 }
+h1{
+    font-size: 2rem;
+}
 h1, h2, h3, h4 {
     font-family: 'Merriweather', serif;
+    color: #719E00;
 }
 h1, h2{
-    color: #067e00;
-    text-align: centers;
+    text-align: center;
 }
 hr{
     border: 0;
@@ -82,6 +85,7 @@ hr{
 }
 
 #topHeader{
+    padding: .5rem 0 .5rem 0;
     position: relative;
     z-index: 20;
     background-color: #a06200;
@@ -122,7 +126,7 @@ hr{
 
 #navBar{
     background-color: #a06200;
-    padding: 5px 20px 5px 20px;
+    padding: 10px 20px 10px 20px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -143,14 +147,27 @@ hr{
 }
 #motd{
     /*background-color: cadetblue;*/
-    padding: 25px;
+    padding: 15px;
     text-align: center;
 }
 #tweeter{
+    padding: 15px;
     display: none;
 }
-#search{
+#tweetBox{
+    border: 1px solid green;
+}
+#searchZ{
+    padding: 15px;
     margin-bottom: 15px;
+}
+#searchSubmit{
+    background-color:#719E00;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 #desktopNav{
     display: none;
@@ -161,17 +178,17 @@ hr{
     border-radius: 25px;
     font-weight: bold;
     font-size: 1.1rem;
-    background-color: rgb(0, 162, 38);
+    background-color: #719E00;
     color: white;
     cursor: pointer;
     outline: none;
     transition: background-color .2s linear;
 }
 .ctaButton:hover{
-    background-color: rgb(0, 198, 46);
+    background-color: #55A100;
 }
 main{
-    background-color:  rgb(255, 249, 236);
+    background-color:  #FFF5E6;
     padding: 75px 0 75px 0;
 }
 footer{
@@ -245,7 +262,7 @@ nav ul li {
     cursor: pointer;
 }
 #hamburger:hover span{
-    background: #ffffff;
+    background: #39A100;
     border: 1px solid rgb(0, 128, 0);
 }
 
@@ -254,7 +271,8 @@ nav ul li {
     position: absolute;
     height: 9px;
     width: 100%;
-    background: #e8e8e8;
+    background: #719E00;
+    /* background: #9E0008; */
     border-radius: 9px;
     border: 1px solid rgba(0, 128, 0, 0.173);
     opacity: 1;
@@ -489,6 +507,7 @@ nav ul li {
     #desktopNav{
         display: block;
         width: 80%;
+        padding: 15px 0 15px 0s;
     }
     #desktopNav ul{
         display: flex;
@@ -505,7 +524,7 @@ nav ul li {
         transition: color .2s linear;
     }
     #desktopNav> ul> li> a:hover{
-        color: rgb(0, 0, 0);
+        color: #9E0008;
     }
     #presDisplay{
         position: absolute;
@@ -559,7 +578,7 @@ nav ul li {
     text-align: center;
 }
 .cardArticle a{
-   color: #067e00;
+   color: #719E00;
 }
 .cardArticle .lienArticle{
     display: block;
@@ -697,6 +716,8 @@ nav ul li {
     margin-bottom: 0;
     border: 1px solid rgb(75, 73, 67);
     border-radius: 25px;
+    color: white;
+    background-color: rgb(0, 162, 38);
 }
 #formLogin form input[type='text'],#formLogin form input[type='password']{
     background-color: rgb(255, 249, 236);

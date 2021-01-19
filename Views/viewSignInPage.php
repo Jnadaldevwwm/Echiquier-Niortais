@@ -1,7 +1,7 @@
 <?php
 
     ?>
-    <h2 class='txtCenter'>Créer un compte : </h2>
+    <h1 class='txtCenter'>Créer un compte : </h1>
     <form action="?action=signIn" method="POST" id="formInscription">
         <label for="username">Nom d'utilisateur : </label>
         <input type="text" name="username" id="" placeholder="Nom d'utilisateur" autocomplete='off' required>

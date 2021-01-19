@@ -2,7 +2,7 @@
     <?php 
         $this->title = $article['titre'];
         ?>
-        <h2><?= $article['titre'] ?></h2>
+        <h1><?= $article['titre'] ?></h1>
         <?php if($article['image']!='defaultPp.png'){
             echo '<img src="images/uploads/'.$article['image'].'" alt="">';
         }
