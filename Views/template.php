@@ -40,7 +40,12 @@
                 </div>
             </div>
             <div id='navBar'>
-                <div id="hamburger">=</div>
+                <div id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
                 <nav id='desktopNav'>
                     <ul>
                         <li><a href="?action=index">Accueil</a></li>

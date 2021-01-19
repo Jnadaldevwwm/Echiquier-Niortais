@@ -5,11 +5,13 @@ const connButton = document.getElementById('connButton');
 hamburger.addEventListener('click', function(e){
     e.stopPropagation();
     if(togglingMenu.classList.contains('hidden')){
+        hamburger.classList.add('open')
         togglingMenu.classList.remove('hidden');
         togglingMenu.classList.add('visible');
         togglingMenu.classList.add('toggleNavAnimation');
         togglingMenu.classList.remove('untoggleNavAnimation');
     } else {
+        hamburger.classList.remove('open')
         togglingMenu.classList.remove('visible');
         togglingMenu.classList.remove('toggleNavAnimation');
         togglingMenu.classList.add('untoggleNavAnimation');
@@ -38,6 +40,7 @@ if(buttonProfil!=null){
 document.addEventListener('click',function(e){
     if(togglingMenu!=null){
         if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'){
+            hamburger.classList.remove('open')
             togglingMenu.classList.remove('visible');
             togglingMenu.classList.remove('toggleNavAnimation');
             togglingMenu.classList.add('untoggleNavAnimation');

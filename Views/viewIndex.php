@@ -2,7 +2,8 @@
     $this->title = 'Accueil';
 
     ?>
-    <h2 class='txtCenter'>Actualités</h2>
+    <h2 class='txtCenter titrePage'>Actualités</h2>
+    <hr>
     <?php
     foreach ($articles as $article) {
         echo "<article class='cardArticle mAuto'>
