@@ -8,10 +8,12 @@ hamburger.addEventListener('click', function(e){
         togglingMenu.classList.remove('hidden');
         togglingMenu.classList.add('visible');
         togglingMenu.classList.add('toggleNavAnimation');
+        togglingMenu.classList.remove('untoggleNavAnimation');
     } else {
         togglingMenu.classList.remove('visible');
         togglingMenu.classList.remove('toggleNavAnimation');
-        togglingMenu.classList.add('hidden');
+        togglingMenu.classList.add('untoggleNavAnimation');
+        var to = setTimeout(function(){togglingMenu.classList.add('hidden')},1000);
     }
 })
 
@@ -24,10 +26,13 @@ if(buttonProfil!=null){
         menuProfil.classList.remove('hidden');
         menuProfil.classList.add('visible');
         menuProfil.classList.add('toggleProfilNavAnimation');
+        menuProfil.classList.remove('untoggleProfilNavAnimation');
     } else {
         menuProfil.classList.remove('visible');
         menuProfil.classList.remove('toggleProfilNavAnimation');
-        menuProfil.classList.add('hidden');
+        menuProfil.classList.add('untoggleProfilNavAnimation');
+        var to = setTimeout(function(){menuProfil.classList.add('hidden')},1000)
+            ;
     }
 })}
 document.addEventListener('click',function(e){
@@ -35,14 +40,17 @@ document.addEventListener('click',function(e){
         if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'){
             togglingMenu.classList.remove('visible');
             togglingMenu.classList.remove('toggleNavAnimation');
-            togglingMenu.classList.add('hidden');
+            togglingMenu.classList.add('untoggleNavAnimation');
+            var to = setTimeout(function(){togglingMenu.classList.add('hidden')},1000);
         }
     }
     if(menuProfil!=null){
         if(!menuProfil.classList.contains('hidden')&&!e.target.classList.contains('menuProfil')){
             menuProfil.classList.remove('visible');
             menuProfil.classList.remove('toggleProfilNavAnimation');
-            menuProfil.classList.add('hidden');
+            menuProfil.classList.add('untoggleProfilNavAnimation');
+            var to = setTimeout(function(){menuProfil.classList.add('hidden')},1000)
+            ;
         } 
     }
 })

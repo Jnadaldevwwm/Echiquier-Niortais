@@ -48,9 +48,10 @@
                             <a href="" id='navPres'>Présentation▾</a>
                             <div id='presDisplay' class='hidden'>
                                 
-                                        <a href="" class='lienDeroule'>Lien 1</a>
+                                        <a href="" class='lienDeroule'>Nous rejoindre</a>
                                     
                                         <a href="" class='lienDeroule'>Lien 2</a>
+                                        <a href="" class='lienDeroule'>Lien 3</a>
                                  
                             </div>
                         </li>
@@ -103,8 +104,8 @@
                         </form>
                     </div>
                     <div id="tweeter">
-                        <h3 class='txtCenter'>Dernier Tweet : </h3>
-                        <a class="twitter-timeline" href="https://twitter.com/EchiquierNiort?ref_src=twsrc%5Etfw" data-tweet-limit="1">Tweets by EchiquierNiort</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <h3 class='txtCenter'>Derniers Tweets : </h3>
+                        <a class="twitter-timeline" data-height="500" href="https://twitter.com/EchiquierNiort?ref_src=twsrc%5Etfw">Tweets by EchiquierNiort</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </section>
             </aside>

@@ -179,7 +179,6 @@ nav ul li {
 .togglingMenu{
     position: fixed;
     transform: translateX(-250px);
-    transition: transform 1s;
     z-index: 500;
 }
 #togglingMenu nav{
@@ -193,7 +192,26 @@ nav ul li {
     align-items: center;
 }
 .toggleNavAnimation{
-    transform: translateX(0);
+    animation: ease-in-out 1s burgNavToggle forwards;
+}
+.untoggleNavAnimation{
+    animation: ease-in-out 1s burgNavUntoggle forwards;
+}
+@keyframes burgNavToggle{
+    from{
+        transform: translateX(-250px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes burgNavUntoggle{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-250px);
+    }
 }
 
 /*** Connected stuff ***/
@@ -281,12 +299,31 @@ nav ul li {
     height: 100vh;
     padding: 15px;
     transform: translateX(250px);
-    transition: transform 1s;
+    /* transition: transform 1s ease-in-out; */
     -webkit-box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.3); 
     box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.3);
 }
 .toggleProfilNavAnimation{
-    transform: translateX(0);
+    animation: 1s profMenuNavApp ease-in-out forwards;
+}
+.untoggleProfilNavAnimation{
+    animation: 1s profMenuNavDisp ease-in-out forwards;
+}
+@keyframes profMenuNavApp{
+    from{
+        transform: translateX(250px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes profMenuNavDisp{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(250px);
+    }
 }
 /*** Profil ***/
 #formProfil{
@@ -374,7 +411,7 @@ nav ul li {
         display: flex;
         flex-flow: column wrap;
         min-width: 150px;
-        bottom: -80px;
+        bottom: -120px;
         left: 0;
         background-color: white;
     }
