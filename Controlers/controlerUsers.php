@@ -14,7 +14,7 @@ class ControlerUsers extends Controler{
         $this->articles = new Articles;
     }
 
-    public function pageLogin(){
+    public function signUpPage(){
         if(!isset($_SESSION['userToken'])){
             $motd = self::sidebar();
             $view = new View('pageLogin');
@@ -28,6 +28,9 @@ class ControlerUsers extends Controler{
         $motd = self::sidebar();
         $view = new View('signInPage');
         $view->render(array(),array('motd'=>$motd));
+    }
+    public function signIn($data){
+        
     }
 
     //signUp : Methode de verification et d'initialisation de session à la connection d'un utilisateur. Prend en paramètre $data : les datas en POST envoyés par le formulaire de connection.

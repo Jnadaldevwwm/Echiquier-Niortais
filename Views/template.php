@@ -67,7 +67,7 @@
                 </nav>
                 <?php
                     if(!isset($_SESSION['userToken'])){
-                        echo '<a href="?action=adminLoginPage"><button class="ctaButton" id="connButton">Se Connecter !</button></a>';
+                        echo '<a href="?action=signUpPage"><button class="ctaButton" id="connButton">Se Connecter !</button></a>';
                     } else{
                         echo '<div id="isConn">
                                 <span>'.ucfirst($_SESSION["name"]).'</span>

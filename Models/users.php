@@ -47,7 +47,7 @@
         }
 
         public function getAllUsers(){
-            $sql = "SELECT * FROM users u INNER JOIN role r ON u.permission = r.id";
+            $sql = "SELECT u.id as id, u.login as login, u.prenom as prenom, u.nom as nom, r.denomination as name FROM users u INNER JOIN role r ON u.permission = r.id";
             $result = $this->goQuery($sql);
             $users = $result->fetchAll();
             $result->closeCursor();
@@ -68,5 +68,8 @@
                 $sql = "UPDATE users SET login=?, nom=?, prenom=? WHERE id=?";
                 return $this->goQuery($sql,array($dataUser['login'],$dataUser['nom'],$dataUser['prenom'],$userId));
             }
+        }
+        public function createUser($uLogin, $uNom, $uPrenom, $uMdp, $uAvatar){
+            $sql = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, 3, 'token')";
         }
     }

@@ -33,8 +33,8 @@
                         case 'article':
                             $this->ctrlArticle->pageArticle($_GET['idArticle']);
                             break;
-                        case 'adminLoginPage':
-                            $this->ctrlUsers->pageLogin();
+                        case 'signUpPage':
+                            $this->ctrlUsers->signUpPage();
                             break;
                         case 'signUp':
                             $dataConn = $_POST;

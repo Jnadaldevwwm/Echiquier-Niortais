@@ -14,21 +14,21 @@
     <?php
     foreach($data['users'] as $user){
         echo "<tr>
-                <td>"
-                    .$user['id'].
-                "</td>
-                <td>"
-                    .$user['login'].
-                "</td>
-                <td>"
-                    .$user['prenom'].
-                "</td>
-                <td>"
-                    .$user['nom'].
-                "</td>
-                <td>"
-                    .$data['users'][0]['name'].
-                "</td>
+                <td>
+                    {$user['id']}
+                </td>
+                <td>
+                    {$user['login']}
+                </td>
+                <td>
+                    {$user['prenom']}
+                </td>
+                <td>
+                    {$user['nom']}
+                </td>
+                <td>
+                    {$user['name']}
+                </td>
                 <td> 
                     <a href=''>
                         <i class='far fa-edit' title='Modifier'></i>

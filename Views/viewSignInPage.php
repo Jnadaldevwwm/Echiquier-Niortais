@@ -2,6 +2,7 @@
 
     ?>
     <h1 class='txtCenter'>Créer un compte : </h1>
+    <br><br>
     <form action="?action=signIn" method="POST" id="formInscription">
         <label for="username">Nom d'utilisateur : </label>
         <input type="text" name="username" id="" placeholder="Nom d'utilisateur" autocomplete='off' required>
@@ -9,6 +10,7 @@
         <input type="text" name="nom" id="" placeholder="Nom" autocomplete='off' required>
         <label for="prenom">Prenom : </label>
         <input type="text" name="prenom" id="" placeholder="Prénom" autocomplete='off' required>
+        <label for="password">Mot de passe : </label>
         <div id='boxMdp1'>
             <div id='aideBoxPassword' class='dNone'>Le mot de passe doit contenir : <br>
                 8 caractères minimum <br> 
@@ -22,6 +24,7 @@
                 <img src="" alt="icone validite" class="dNone iconSignIn" id="iconValid">
             </div>
         </div>
+        <label for="password">Confirmez le mot de passe : </label>
         <div>
             <input type="password" name="password" id="pswd2" placeholder="Confirmer le mot de passe" required>
             <img src="" alt="icone status" class='dNone iconSignIn' id="iconPassword">
