@@ -69,7 +69,8 @@
                 return $this->goQuery($sql,array($dataUser['login'],$dataUser['nom'],$dataUser['prenom'],$userId));
             }
         }
-        public function createUser($uLogin, $uNom, $uPrenom, $uMdp, $uAvatar){
-            $sql = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, 3, 'token')";
+        public function createUser($uLogin, $uNom, $uPrenom, $uMdp, $uAvatar, $uToken){
+            $sql = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, 3, ?, false)";
+            return $this->goQuery($sql, array($uLogin, $uNom, $uPrenom, $uAvatar, $uMdp, $uToken));
         }
     }

@@ -1,9 +1,13 @@
 <?php
-
+    if(isset($_GET['statusUpdate'])&&$_GET['statusUpdate']=='upload'){
+            echo '<div id="updtStat" class="errorStat txtCenter">Erreur lors de la mise à jour de l\'avatar : <br>'.$_GET['messageScript'].'</div>';
+        }
     ?>
     <h1 class='txtCenter'>Créer un compte : </h1>
     <br><br>
-    <form action="?action=signIn" method="POST" id="formInscription">
+    <form enctype="multipart/form-data" action="?action=signIn" method="POST" id="formInscription">
+        <label for="email">E-Mail : </label>
+        <input type="email" name="email" id="email">
         <label for="username">Nom d'utilisateur : </label>
         <input type="text" name="username" id="" placeholder="Nom d'utilisateur" autocomplete='off' required>
         <label for="nom">Nom : </label>
@@ -29,9 +33,9 @@
             <input type="password" name="password" id="pswd2" placeholder="Confirmer le mot de passe" required>
             <img src="" alt="icone status" class='dNone iconSignIn' id="iconPassword">
         </div>
-        <label for="avatar">Image de profil : </label>
+        <label for="avatar">Image de profil <i>(800x800 pixels max)</i>: </label>
         <input type="file" name="avatar" id="avatar">
-        <input type="submit" value="S'inscrire" id='submitButton'>
+        <input type="submit" value="S'inscrire" id='submitButtonSignIn'>
     </form>
 
     <script src="scripts/scriptInscription.js"></script>

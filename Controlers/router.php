@@ -43,6 +43,9 @@
                         case 'signInPage':
                             $this->ctrlUsers->signInPage();
                             break;
+                        case 'signIn':
+                            $this->ctrlUsers->signIn($_POST);
+                            break;
                         case 'indexAdmin':
                             $this->ctrlUsers->indexAdmin();
                             break;

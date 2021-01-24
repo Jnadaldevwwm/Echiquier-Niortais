@@ -31,6 +31,9 @@ hr{
     margin-top: 25px;
     margin-bottom: 25px;
 }
+label{
+    font-weight: bold;
+}
 /* Class générales  */
 .mAuto{
     margin-left: auto;
@@ -360,6 +363,15 @@ nav ul li {
 }
 #boxMdp1>div{
     margin-bottom: 5px;
+}
+#submitButtonSignIn{
+    margin-top: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    background-color: #719E00;
+    padding: 5px 15px 5px 15px;
+    border: none;
+    border-radius: 5px;
 }
 /*** Utilisateurs ***/
 #isConn{

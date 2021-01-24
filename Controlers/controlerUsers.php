@@ -30,6 +30,30 @@ class ControlerUsers extends Controler{
         $view->render(array(),array('motd'=>$motd));
     }
     public function signIn($data){
+        if(isset($data) && !empty($data)){
+            $uLogin = htmlspecialchars($data['username']);
+            $uNom = htmlspecialchars($data['nom']);
+            $uPrenom = htmlspecialchars($data['prenom']);
+            $uMdp = htmlspecialchars($data['password']);
+            $hashedMdp = password_hash($uMdp, PASSWORD_DEFAULT);
+            if(!empty($_FILES['avatar']['name'])){
+                define('WIDTH_MAX', 800);    // Largeur max de l'image en pixels
+                define('HEIGHT_MAX', 800);    // Hauteur max de l'image en pixels
+                require "../Controlers/scripts/uploadImage.php";
+                $uAvatarLink=$nomImage;
+                if($message!='OK'){
+                    return header('Location: ?action=signInPage&statusUpdate=upload&messageScript='.$message);
+                }
+            } else {
+                $uAvatarLink='default.png';
+            }
+            $uToken = bin2hex(random_bytes(10));
+            $this->user->createUser($uLogin,$uNom,$uPrenom,$hashedMdp,$uAvatarLink,$uToken);
+
+
+        } else {
+            header('Location:?action=index');
+        }
         
     }
 
