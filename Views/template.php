@@ -21,7 +21,7 @@
                 <a href="" id='presentation'>Présentation▾</a>
                 <ul id='presSmart' class='dNone'>
                     <li><a href="" class='lienDeroule'>Nous rejoindre</a></li>
-                    <li><a href="" class='lienDeroule'>Lien 2</a></li>
+                    <li><a href="" class='lienDeroule'>Qui sommes nous ?</a></li>
                     <li><a href="" class='lienDeroule'>Lien 3</a></li>     
                 </ul>
             </li>
@@ -47,10 +47,10 @@
             <div id="banner">
                 <a href="?action='index'"><img src="images/logo.gif" alt="logo echiquier niortais" id="logoSite"></a>
                 <div id="linksBanner">
-                    <a href="http://www.echecs.asso.fr/"><img src="images/Logo_FFE.jpg" alt="logo fédération française d'echecs"></a>
-                    <a href="https://twitter.com/EchiquierNiort?lang=fr"><img src="images/Logo_Twitter.png" alt=""></a>
-                    <a href="https://www.facebook.com/pg/echiquierniortais/events/?ref=page_internal"><img src="images/Logo_Facebook.png" alt=""></a>
-                    <a href="https://www.instagram.com/echiquierniortais/"><img src="images/Logo_Instagram.png" alt=""></a>
+                    <a href="http://www.echecs.asso.fr/" target="_blank"><img src="images/Logo_FFE.jpg" alt="logo fédération française d'echecs"></a>
+                    <a href="https://twitter.com/EchiquierNiort?lang=fr" target="_blank"><img src="images/Logo_Twitter.png" alt=""></a>
+                    <a href="https://www.facebook.com/pg/echiquierniortais/events/?ref=page_internal" target="_blank"><img src="images/Logo_Facebook.png" alt=""></a>
+                    <a href="https://www.instagram.com/echiquierniortais/" target="_blank"><img src="images/Logo_Instagram.png" alt=""></a>
                 </div>
             </div>
             <div id='navBar'>
@@ -67,7 +67,7 @@
                             <a href="" id='navPres'>Présentation▾</a>
                             <div id='presDisplay' class='hidden'>
                                         <a href="" class='lienDeroule'>Nous rejoindre</a>
-                                        <a href="" class='lienDeroule'>Lien 2</a>
+                                        <a href="" class='lienDeroule'>Qui sommes nous ?</a>
                                         <a href="" class='lienDeroule'>Lien 3</a>
                             </div>
                         </li>
