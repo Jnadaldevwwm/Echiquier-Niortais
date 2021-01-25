@@ -51,4 +51,14 @@
             </div>
         </div>
     </a>
+    <a href="?action=tournoisManagement">
+        <div class="cardAdmin">
+            <div class="headCardAdmin">
+                <img src="images/tournamentIcon.png" alt="icone chronomètre">
+            </div>
+            <div class="bodyCardAdmin">
+                Gérer les Tournois.
+            </div>
+        </div>
+    </a>
 </section>

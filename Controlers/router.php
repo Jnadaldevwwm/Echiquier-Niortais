@@ -6,6 +6,7 @@
     require_once '../Controlers/controlerUsers.php';
     require_once '../Controlers/controlerMotd.php';
     require_once '../Controlers/baseControler.php';
+    require_once '../Controlers/controlerTournois.php';
 
     class Router{
         private $ctrlIndex;
@@ -13,6 +14,7 @@
         private $ctrlUsers;
         private $ctrlMotd;
         private $ctrlBase;
+        private $ctrlTournois;
 
         public function __construct(){
             $this->ctrlIndex = new ControlerIndex();
@@ -20,6 +22,7 @@
             $this->ctrlUsers = new ControlerUsers();
             $this->ctrlMotd = new ControlerMotd();
             $this->ctrlBase = new Controler();
+            $this->ctrlTournois = new ControlerTournois();
         }
 
         // Router simple en fonction du paramètre "action" passé en GET.
