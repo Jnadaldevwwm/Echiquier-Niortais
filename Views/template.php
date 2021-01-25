@@ -17,7 +17,14 @@
         <nav id='dynamicNav'>
             <ul>
             <li><a href="">Accueil</a></li>
-            <li><a href="">Présentation▾</a></li>
+            <li>
+                    <a href="" id='presentation'>Présentation▾</a>
+                    <ul id='presSmart' class='dNone'>
+                        <li><a href="" class='lienDeroule'>Nous rejoindre</a></li>
+                        <li> <a href="" class='lienDeroule'>Lien 2</a></li>
+                        <li><a href="" class='lienDeroule'>Lien 3</a></li>     
+                    </ul>
+            </li>
             <li><a href="">Tournois</a></li>
             <li><a href="">Evènements</a></li>
             <li><a href="">Contact</a></li>
@@ -25,7 +32,7 @@
         </nav>
 </div>
     <div id="topHeader">
-        <span>L'Echiquier Niortais - 49 rue de Ribray 7900 Niort - Tel : 06 85 57 74 60 - E-Mail : echiquiers.niortais@gmail.com
+        <span>L'Echiquier Niortais - 49 rue de Ribray 79000 Niort - Tel : 06 85 57 74 60 - E-Mail : echiquiers.niortais@gmail.com
         </span>
     </div>
     <section id="visuelPage">

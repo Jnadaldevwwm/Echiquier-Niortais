@@ -45,6 +45,9 @@ class ControlerArticle extends Controler{
         $this->articles->addArticle($titreArticle,$dateArticle,$imageEntete,$contenuArticle,$auteurArticle);
         header('Location:?action=articlesManagement');
     }
+    public function editArticle($idArticle){
+
+    }
     public function deleteArticle($idArticle){
         $this->articles->removeArticle($idArticle);
         //header('Location:?action=articlesManagement');

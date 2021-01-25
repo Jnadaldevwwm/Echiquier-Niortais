@@ -68,8 +68,8 @@ class ControlerUsers extends Controler{
                 $user = $this->user->returnUser($login);
                 //On vérifie que les mot de passe est bon
                 if(password_verify($password,$user['password'])){
-                    $error = false;
-                    $_SESSION['login']=$user['login'];
+                    $error = false; // Pas d'erreurs
+                    $_SESSION['login']=$user['login'];      //  On set toutes nos variables de session
                     $_SESSION['userToken']=$user['token'];
                     $_SESSION['id']=$user['id'];
                     $_SESSION['permission']=$user['permission'];
@@ -78,10 +78,10 @@ class ControlerUsers extends Controler{
                     $_SESSION['avatar']=$user['avatar'];
                     header('Location: ?action=index');
                 }else{
-                    $error = "Mot de passe incorrect.";
+                    $error = "Mot de passe incorrect."; // Si le mdp est incorrect
                 }
             } else{
-                $error = "Nom d'utilisateur incorrect.";
+                $error = "Nom d'utilisateur incorrect.";    // Si le login est incorrect
             }
             $view = new View('pageLogin');
             $motd = self::sidebar();
@@ -104,12 +104,6 @@ class ControlerUsers extends Controler{
 
     public function articlesManagement(){
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
-            // $articles = $this->articles->getAllArticles();
-            // $view = new View('articlesManagement');
-            // $motd = self::sidebar();
-            // $view->render(array('articles' => $articles),array('motd'=>$motd));
-
-
             if(isset($_GET['page']) && !empty($_GET['page'])){
                 $currentPage = (int) strip_tags($_GET['page']);
             }else{
@@ -125,7 +119,7 @@ class ControlerUsers extends Controler{
     
             $motd = self::sidebar();
             $view = new View('articlesManagement');
-            $view->render(array('articles'=>$articles,'pagination'=>$pagination),array('motd'=>$motd));
+            $view->render(array('articles'=>$articles,'pagination'=>$pagination,'nbArticles'=>$nbArticles,'artParPage'=>$parPage),array('motd'=>$motd));
         } else{
             header('Location: ?action=index');
         }

@@ -4,18 +4,18 @@
 <h2 class='txtCenter'>Getion des articles</h2>
 <table class='managementTable mAuto'>
     <tr>
-        <td>Id</td>
+        <td>N°</td>
         <td>Titre</td>
         <td>Auteur</td>
         <td>Date publication</td>
         <td>Action</td>
     </tr>
     <?php
-
+    $compteur = 0+(($pagination['currentPage']-1)*$artParPage);
     foreach($data['articles'] as $article){
         echo "<tr>
                 <td>"
-                    .$article['id'].
+                    .($nbArticles-$compteur).
                 "</td>
                 <td>"
                     .$article['titre'].
@@ -30,10 +30,11 @@
                     <a href=''>
                         <i class='far fa-edit' title='Modifier'></i>
                     </a>
-                    <a href='?action=deleteArticle&idArticle=".$article['id']."' class='bDelete' data-id=".$article['id'].">
+                    <a href='?action=deleteArticle&idArticle={$article['id']}' class='bDelete' data-id={$article['id']}>
                         <i class='fas fa-trash' title='Supprimer'></i>
                     </a>
                 </td>";
+                $compteur++;
     }
 ?>
     </tr>

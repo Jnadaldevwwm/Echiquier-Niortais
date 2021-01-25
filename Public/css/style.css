@@ -34,6 +34,17 @@ hr{
 label{
     font-weight: bold;
 }
+ul ul {
+    margin-left: 15px;
+}
+input[type="submit"]{
+    background-color:#719E00;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 /* Class générales  */
 .mAuto{
     margin-left: auto;
@@ -68,6 +79,14 @@ label{
 }
 .titrePage{
     margin-bottom: 25px;
+}
+.boutonInput{
+    background-color:#719E00;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 /*** Rendu Quill ***/
 .ql-align-center{
@@ -139,6 +158,7 @@ label{
 }
 
 #midContent{
+    background-color: #FFF5E6;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -164,6 +184,9 @@ label{
     padding: 15px;
     margin-bottom: 15px;
 }
+#search{
+    margin-bottom: 1rem;
+}
 #searchSubmit{
     background-color:#719E00;
     color: white;
@@ -174,6 +197,9 @@ label{
 }
 #desktopNav{
     display: none;
+}
+#presSmart{
+    flex-flow: column;
 }
 .ctaButton{
     padding: 15px 20px 15px 20px;
@@ -474,6 +500,49 @@ nav ul li {
 #formProfil img{
     width: 20%;
 }
+/*** Admin ***/
+#uiAdmin{
+    padding: 0 2rem 0 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+#uiAdmin a{
+    padding: 15px;
+    text-decoration: none;
+    color: #9E0008;
+}
+#uiAdmin a:hover .cardAdmin{
+    background-color: rgb(216, 196, 114);
+}
+.cardAdmin{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 15px;
+    width: 180px;
+    height: 200px;
+    border: 1px solid green;
+    border-radius: 15px;
+    transition: background-color .2s linear;
+}
+.headCardAdmin{
+    height: 150px;
+}
+.headCardAdmin img{
+    width: 100%;
+    height: auto;
+}
+.bodyCardAdmin{
+    height: 50px;
+    text-align: center;
+}
+.carAdmin:hover{
+    background-color: rgb(216, 196, 114);
+}
+
+
+
 
 /*** Responsive tempalte ***/
 @media screen and (min-width: 1025px){
@@ -494,7 +563,7 @@ nav ul li {
     }
       
     #midContent {
-        background-color: rgb(255, 249, 236);
+        background-color: #FFF5E6;
         flex-flow: row wrap;
     }
     #midContent aside{

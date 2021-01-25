@@ -39,7 +39,7 @@ if(buttonProfil!=null){
 })}
 document.addEventListener('click',function(e){
     if(togglingMenu!=null){
-        if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'){
+        if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'&&e.target.id!='presentation'){
             hamburger.classList.remove('open')
             togglingMenu.classList.remove('visible');
             togglingMenu.classList.remove('toggleNavAnimation');
@@ -76,4 +76,18 @@ navPresentation.addEventListener('mouseenter', function(){
 navPresentation.addEventListener('click', function(e){
     e.preventDefault();
     console.log('click')
+})
+
+const smartPresentation = document.getElementById('presentation');
+const menuSmartPresentation = document.getElementById('presSmart');
+smartPresentation.addEventListener('click', function(e){
+    e.preventDefault();
+    if(menuSmartPresentation.classList.contains('dNone')){
+        menuSmartPresentation.classList.remove('dNone');
+        menuSmartPresentation.classList.add('dFlex'); 
+    } else if(menuSmartPresentation.classList.contains('dFlex')){
+        menuSmartPresentation.classList.remove('dFlex');
+        menuSmartPresentation.classList.add('dNone'); 
+    }
+    
 })

@@ -7,5 +7,5 @@
         <input type="text" name="titreMotd" id="titreMotd" value="<?= $currentMotd['title'] ?>">
         <label for="contenuMotd">Contenu message : </label>
         <textarea name="contenuMotd" id="contenuMotd" cols="70" rows="15"><?= $currentMotd['content'] ?></textarea>
-        <input type="submit" value="Modifier">
+        <input type="submit" value="Modifier" class='boutonInput'>
     </form>
