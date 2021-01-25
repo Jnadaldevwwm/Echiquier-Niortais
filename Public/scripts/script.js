@@ -39,7 +39,7 @@ if(buttonProfil!=null){
 })}
 document.addEventListener('click',function(e){
     if(togglingMenu!=null){
-        if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'&&e.target.id!='presentation'){
+        if(!togglingMenu.classList.contains('hidden')&&e.target.id!='dynamicNav'&&e.target.id!='presentation'&&e.target.id!='tournois'){
             hamburger.classList.remove('open')
             togglingMenu.classList.remove('visible');
             togglingMenu.classList.remove('toggleNavAnimation');
@@ -77,6 +77,25 @@ navPresentation.addEventListener('click', function(e){
     e.preventDefault();
     console.log('click')
 })
+const navTournois = document.getElementById('navTournois');
+const tournoisDisplay = document.getElementById('tournoisDisplay');
+navTournois.addEventListener('mouseenter', function(){
+    console.log('entre')
+    tournoisDisplay.classList.remove('hidden');
+    tournoisDisplay.classList.add('visible');
+    function fonctionListenMouse(e){
+        console.log(e.target.id)
+        if(e.target.id != 'navTournois' && e.target.id != 'tournoisDisplay' && e.target.parentNode.id != 'tournoisDisplay' && e.target.parentNode.parentNode.id != 'tournoisDisplay'){
+            tournoisDisplay.classList.remove('visible');
+            tournoisDisplay.classList.add('hidden');
+            document.removeEventListener('mousemove', fonctionListenMouse);
+    }}
+    document.addEventListener('mousemove', fonctionListenMouse)
+})
+navTournois.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log('click')
+})
 
 const smartPresentation = document.getElementById('presentation');
 const menuSmartPresentation = document.getElementById('presSmart');
@@ -88,6 +107,19 @@ smartPresentation.addEventListener('click', function(e){
     } else if(menuSmartPresentation.classList.contains('dFlex')){
         menuSmartPresentation.classList.remove('dFlex');
         menuSmartPresentation.classList.add('dNone'); 
+    }
+    
+})
+const smartTournois = document.getElementById('tournois');
+const menuSmartTournois = document.getElementById('tournoisSmart');
+smartTournois.addEventListener('click', function(e){
+    e.preventDefault();
+    if(menuSmartTournois.classList.contains('dNone')){
+        menuSmartTournois.classList.remove('dNone');
+        menuSmartTournois.classList.add('dFlex'); 
+    } else if(menuSmartTournois.classList.contains('dFlex')){
+        menuSmartTournois.classList.remove('dFlex');
+        menuSmartTournois.classList.add('dNone'); 
     }
     
 })

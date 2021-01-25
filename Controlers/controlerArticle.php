@@ -46,7 +46,16 @@ class ControlerArticle extends Controler{
         header('Location:?action=articlesManagement');
     }
     public function editArticle($idArticle){
+        $article = $this->articles->getArticleById($idArticle);
 
+        $view = new View('editArticle');
+        $motd = self::sidebar();
+        $view->render(array('article'=>$article),array('motd'=>$motd));
+    }
+    public function edit(){
+        $dataArticle = array('titre'=>$_POST['titreArticle'],'contenu'=>$_POST['contentArticle'],'id'=>$_GET['idArticle']);
+        $this->articles->editArticle($dataArticle);
+        header('Location:?action=articlesManagement');
     }
     public function deleteArticle($idArticle){
         $this->articles->removeArticle($idArticle);

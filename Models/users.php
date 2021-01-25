@@ -47,7 +47,7 @@
         }
 
         public function getAllUsers(){
-            $sql = "SELECT u.id as id, u.login as login, u.prenom as prenom, u.nom as nom, r.denomination as name FROM users u INNER JOIN role r ON u.permission = r.id";
+            $sql = "SELECT u.id as id, u.login as login, u.prenom as prenom, u.nom as nom, r.name as name FROM users u INNER JOIN role r ON u.permission = r.id";
             $result = $this->goQuery($sql);
             $users = $result->fetchAll();
             $result->closeCursor();

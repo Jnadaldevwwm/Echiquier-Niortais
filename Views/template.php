@@ -18,14 +18,21 @@
             <ul>
             <li><a href="">Accueil</a></li>
             <li>
-                    <a href="" id='presentation'>Présentation▾</a>
-                    <ul id='presSmart' class='dNone'>
-                        <li><a href="" class='lienDeroule'>Nous rejoindre</a></li>
-                        <li> <a href="" class='lienDeroule'>Lien 2</a></li>
-                        <li><a href="" class='lienDeroule'>Lien 3</a></li>     
-                    </ul>
+                <a href="" id='presentation'>Présentation▾</a>
+                <ul id='presSmart' class='dNone'>
+                    <li><a href="" class='lienDeroule'>Nous rejoindre</a></li>
+                    <li><a href="" class='lienDeroule'>Lien 2</a></li>
+                    <li><a href="" class='lienDeroule'>Lien 3</a></li>     
+                </ul>
             </li>
-            <li><a href="">Tournois</a></li>
+            <li>
+                <a href="" id="tournois">Tournois▾</a>
+                <ul id='tournoisSmart' class='dNone'>
+                    <li><a href="" class='lienDeroule'>Type tournoi 1</a></li>
+                    <li><a href="" class='lienDeroule'>Type tournoi 2</a></li>
+                    <li><a href="" class='lienDeroule'>Type tournoi 3</a></li>     
+                </ul>
+            </li>
             <li><a href="">Evènements</a></li>
             <li><a href="">Contact</a></li>
             </ul>
@@ -59,15 +66,19 @@
                         <li class='pRelativ'>
                             <a href="" id='navPres'>Présentation▾</a>
                             <div id='presDisplay' class='hidden'>
-                                
                                         <a href="" class='lienDeroule'>Nous rejoindre</a>
-                                    
                                         <a href="" class='lienDeroule'>Lien 2</a>
                                         <a href="" class='lienDeroule'>Lien 3</a>
-                                 
                             </div>
                         </li>
-                        <li><a href="">Tournois</a></li>
+                        <li class='pRelativ'>
+                            <a href="" id='navTournois'>Tournois▾</a>
+                            <div id='tournoisDisplay' class='hidden'>
+                                        <a href="" class='lienDeroule'>Type tournoi 1</a>
+                                        <a href="" class='lienDeroule'>Type tournoi 2</a>
+                                        <a href="" class='lienDeroule'>Type tournoi 3</a>
+                            </div>
+                        </li>
                         <li><a href="">Evènements</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>

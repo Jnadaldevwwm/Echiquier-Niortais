@@ -64,6 +64,9 @@
                         case 'editArticle':
                             $this->ctrlArticle->editArticle($_GET['idArticle']);
                             break;
+                        case 'edit':
+                            $this->ctrlArticle->edit();
+                            break;
                         case 'deleteArticle':
                             $this->ctrlArticle->deleteArticle($_GET['idArticle']);
                             break;

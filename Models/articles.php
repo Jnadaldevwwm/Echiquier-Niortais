@@ -65,4 +65,9 @@
             $articles->closeCursor();
             return $result;
         }
+
+        public function editArticle($dataArticle){
+            $sql = "UPDATE articles SET titre = ?, contenu = ? WHERE id=?";
+            $result = $this->goQuery($sql, array($dataArticle['titre'],$dataArticle['contenu'],$dataArticle['id']));
+        }
     }

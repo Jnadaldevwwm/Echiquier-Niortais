@@ -27,7 +27,7 @@
                     .$article['date'].
                 "</td>
                 <td> 
-                    <a href=''>
+                    <a href='?action=editArticle&idArticle={$article['id']}'>
                         <i class='far fa-edit' title='Modifier'></i>
                     </a>
                     <a href='?action=deleteArticle&idArticle={$article['id']}' class='bDelete' data-id={$article['id']}>
