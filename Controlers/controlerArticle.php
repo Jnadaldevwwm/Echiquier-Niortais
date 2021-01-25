@@ -19,9 +19,13 @@ class ControlerArticle extends Controler{
     }
 
     public function pageNewArticle(){
-        $view = new View('pageNewArticle');
-        $motd = self::sidebar();
-        $view->render(array(),array('motd'=>$motd));
+        if(isset($_SESSION['permission'])&&$_SESSION['permission']=='1'){
+            $view = new View('pageNewArticle');
+            $motd = self::sidebar();
+            $view->render(array(),array('motd'=>$motd));
+        } else {
+            header('Location:?action=index');
+        }
     }
     public function createArticle(){
         $data = $_POST;

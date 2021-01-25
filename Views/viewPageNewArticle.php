@@ -2,7 +2,7 @@
     $this->title = 'Nouvel Article';
 ?>
 
-LE NOUVEL ARTICLE
+<h1>Créer un nouvel article</h1>
 <form enctype="multipart/form-data" action="?action=addArticle"id="formArticle" method="POST">
     <label for="titreArticle">Titre de l'article : </label>
     <input type="text" name="titreArticle" id="titreArticle" placeholder="titre">

@@ -31,7 +31,7 @@
         $links = "";
         $current_page = $pagination['currentPage'];
         $total_pages = $pagination['pages'];
-        if ($total_pages >= 1 && $current_page <= $total_pages) {
+        if ($total_pages > 1 && $current_page <= $total_pages) {
             $links .= "<li><a href=\"?page=1\">1</a></li>";
             $i = max(2, $current_page - 5);
             if ($i > 2)
@@ -45,3 +45,5 @@
         }
         echo $links;
 ?>
+        </ul>
+    </nav>
