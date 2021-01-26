@@ -90,6 +90,15 @@
                             $dataUser = $_POST;
                             $this->ctrlUsers->updateProfil($dataUser);
                             break;
+                        case 'tournoiCreationPage':
+                            $this->ctrlTournois->tournoiCreationPage();
+                            break;
+                        case 'getTournois':
+                            $this->ctrlTournois->getTournois();
+                            break;
+                        case 'addTournoi':
+                            $this->ctrlTournois->addTournoi();
+                            break;
                         case 'disconnect':
                             $this->ctrlUsers->disconnect();
                             break;
