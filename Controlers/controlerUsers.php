@@ -16,18 +16,16 @@ class ControlerUsers extends Controler{
 
     public function signUpPage(){
         if(!isset($_SESSION['userToken'])){
-            $motd = self::sidebar();
             $view = new View('pageLogin');
-            $view->render(array(),array('motd'=>$motd));  
+            $view->render(array(),array('motd'=>self::motd()));  
         }else{
             header('Location: ?action=index');
         }
         
     }
     public function signInPage(){
-        $motd = self::sidebar();
         $view = new View('signInPage');
-        $view->render(array(),array('motd'=>$motd));
+        $view->render(array(),array('motd'=>self::motd()));
     }
     public function signIn($data){
         if(isset($data) && !empty($data)){
@@ -84,8 +82,7 @@ class ControlerUsers extends Controler{
                 $error = "Nom d'utilisateur incorrect.";    // Si le login est incorrect
             }
             $view = new View('pageLogin');
-            $motd = self::sidebar();
-            return $view->render(array('error' => $error ),array('motd'=>$motd));
+            return $view->render(array('error' => $error ),array('motd'=>self::motd()));
         } else{
             header('Location: ?action=index');
         }
@@ -95,8 +92,7 @@ class ControlerUsers extends Controler{
     public function indexAdmin(){
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $view = new View('indexAdmin');
-            $motd = self::sidebar();
-            return $view->render(array(),array('motd'=>$motd));
+            return $view->render(array(),array('motd'=>self::motd()));
         } else{
             header('Location: ?action=index');
         }
@@ -117,9 +113,8 @@ class ControlerUsers extends Controler{
     
             $pagination = array('currentPage'=>$currentPage,'pages'=>$nbPages);
     
-            $motd = self::sidebar();
             $view = new View('articlesManagement');
-            $view->render(array('articles'=>$articles,'pagination'=>$pagination,'nbArticles'=>$nbArticles,'artParPage'=>$parPage),array('motd'=>$motd));
+            $view->render(array('articles'=>$articles,'pagination'=>$pagination,'nbArticles'=>$nbArticles,'artParPage'=>$parPage),array('motd'=>self::motd()));
         } else{
             header('Location: ?action=index');
         }
@@ -129,8 +124,7 @@ class ControlerUsers extends Controler{
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $users = $this->user->getAllUsers();
             $view = new View('usersManagement');
-            $motd = self::sidebar();
-            $view->render(array('users'=>$users),array('motd'=>$motd));
+            $view->render(array('users'=>$users),array('motd'=>self::motd()));
         }
     }
 
@@ -138,8 +132,7 @@ class ControlerUsers extends Controler{
         if(isset($_SESSION['userToken'])){
             $user = $this->user->getOneUser($_SESSION['id']);
             $view = new View('viewProfil');
-            $motd = self::sidebar();
-            $view->render(array('user'=>$user),array('motd'=>$motd));
+            $view->render(array('user'=>$user),array('motd'=>self::motd()));
         } else {
             header('Location: ?action=index');
         }

@@ -6,7 +6,7 @@
         public function __construct(){
             static::$motd = new Motd;
         }
-        public static function sidebar(){
+        public static function motd(){
            $motd = self::$motd;
            return $motd->getMotd();
         }

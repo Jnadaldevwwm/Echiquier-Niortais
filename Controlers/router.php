@@ -93,6 +93,9 @@
                         case 'tournoiCreationPage':
                             $this->ctrlTournois->tournoiCreationPage();
                             break;
+                        case 'tournoisManagement':
+                            $this->ctrlTournois->tournoisManagement();
+                            break;
                         case 'getTournois':
                             $this->ctrlTournois->getTournois();
                             break;

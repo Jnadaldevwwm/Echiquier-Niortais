@@ -14,9 +14,8 @@ class ControlerMotd extends Controler{
     public function motdManagement(){
         if(isset($_SESSION['permission'])&&$_SESSION['permission']=='1'){
             $currentMotd = $this->motd->getMotd();
-            $motd = self::sidebar();
             $view = new View('motdManagement');
-            $view->render(array('currentMotd' => $currentMotd),array('motd' => $motd));
+            $view->render(array('currentMotd' => $currentMotd),array('motd' => self::motd()));
         } else {
             return header('Location: ?action=index');
         }

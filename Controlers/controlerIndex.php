@@ -25,14 +25,12 @@ class ControlerIndex extends Controler{
 
         $pagination = array('currentPage'=>$currentPage,'pages'=>$nbPages);
 
-        $motd = self::sidebar();
         $view = new View('Index');
-        $view->render(array('articles'=>$articles,'pagination'=>$pagination),array('motd'=>$motd));
+        $view->render(array('articles'=>$articles,'pagination'=>$pagination),array('motd'=>self::motd()));
     }
     public function test(){
         $data = $_POST;
-        $motd = self::sidebar();
         $view = new View('Test');
-        $view->render(array('data'=>$data),array('motd'=>$motd));
+        $view->render(array('data'=>$data),array('motd'=>self::motd()));
     }
 }

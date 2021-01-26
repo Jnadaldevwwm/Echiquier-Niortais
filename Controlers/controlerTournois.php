@@ -13,10 +13,18 @@ class ControlerTournois extends Controler{
 
     public function tournoiCreationPage(){
 
-        $motd = self::sidebar();
         $view = new View('TournoiCreation');
-        $view->render(array(),array('motd'=>$motd));
+        $view->render(array(),array('motd'=>self::motd()));
     }
+
+    public function tournoisManagement(){
+
+        
+        $view = new View('TournoiCreation');
+        $view->render(array(),array('motd'=>self::motd()));
+    }
+
+
 
     public function getTournois(){
         $tournois = $this->tournois->getTournois();
