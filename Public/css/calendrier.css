@@ -68,6 +68,12 @@
 }
 .yatournoi{
     background-color: lightblue;
+    position: relative;
+}
+.logoTournoi{
+    position: absolute;
+    top: 20px;
+    left: 22px;
 }
 /*** Inputs ***/
 #zoneInputs{

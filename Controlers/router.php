@@ -96,6 +96,9 @@
                         case 'getTournois':
                             $this->ctrlTournois->getTournois();
                             break;
+                        case 'getTournoisDate':
+                            $this->ctrlTournois->getTournoisDate();
+                            break;
                         case 'addTournoi':
                             $this->ctrlTournois->addTournoi();
                             break;

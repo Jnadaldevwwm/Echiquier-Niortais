@@ -22,8 +22,15 @@ class ControlerTournois extends Controler{
         $tournois = $this->tournois->getTournois();
         echo json_encode($tournois);
     }
+    public function getTournoisDate(){
+        $date = $_GET['date'];
+        $tournois = $this->tournois->getTournoisDate($date);
+        echo json_encode($tournois);
+    }
 
     public function addTournoi(){
-        
+        $dataTournoi = $_POST;
+        $this->tournois->addTournoi($dataTournoi);
+        header('Location:?action=tournoiCreationPage');
     }
 }
