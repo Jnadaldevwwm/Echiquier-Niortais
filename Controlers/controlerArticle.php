@@ -3,6 +3,7 @@
 require_once '../Controlers/baseControler.php';
 require_once '../views/view.php';
 require_once '../Models/articles.php';
+require_once '../Controlers/scripts/dataImageConvert.php';
 
 class ControlerArticle extends Controler{
     private $articles;
