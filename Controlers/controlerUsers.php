@@ -179,9 +179,14 @@ class ControlerUsers extends Controler{
         if(isset($_SESSION['permission']) && $_SESSION['permission'] == '1'){
             $userId = $_GET['userId'];
             $this->user->deleteUser($userId);
-           // return header('Location: ?action=usersManagement&statusUser=deleted');
         } else {
             return header('Location: ?action=index');
+        }
+    }
+    public function adminCreateUserPage(){
+        if(isset($_SESSION['permission']) && $_SESSION['permission'] == '1'){
+            $view = new View('AdminCreateUser');
+            $view->render(array('user'=>$user),array('motd'=>self::motd()));
         }
     }
     public function disconnect(){

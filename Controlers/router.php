@@ -79,6 +79,9 @@
                         case 'deleteUser':
                             $this->ctrlUsers->deleteUser();
                             break;
+                        case 'adminCreateUserPage':
+                            $this->ctrlUsers->adminCreateUserPage();
+                            break;
                         case 'motdManagement':
                             $this->ctrlMotd->motdManagement();
                             break;

@@ -373,7 +373,7 @@ nav ul li {
     align-items: center;
     justify-content: center;
 }
-#formInscription input{
+#formInscription input, #formInscription select{
     margin-bottom: 15px;
 }
 .iconSignIn{
