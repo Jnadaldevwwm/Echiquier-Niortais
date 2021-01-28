@@ -27,7 +27,6 @@ ajRequete.onload = function(){
                 var curMois = currentDate.getMonth()+1;
                 currentDate.setMonth(curMois);
                 deleteJours(zoneJours);
-                console.log(lesTournois)
                 getJours(currentDate,zoneJours,lesTournois);
                 getEntete(currentDate,entete);
             }
@@ -214,8 +213,10 @@ function deleteJours(zoneJours){
 }
 // Fonction création et affichage des jours du moi
 function getJours(currentDate,zoneJours,tournois){
-    //console.log(tournois);
-    var parsedTournois = JSON.parse(tournois); 
+    if(tournois != ''){
+       var parsedTournois = JSON.parse(tournois);  
+    }
+    
 
     nbrJours = getDaysInMonth(currentDate.getMonth(),currentDate.getFullYear());
     var jours = ['Dim','Lun','Mar','Mer','Jeu','Vend','Sam'];
@@ -238,14 +239,19 @@ function getJours(currentDate,zoneJours,tournois){
             var mois = date.getMonth()+1;
         }
         var dateJour = date.getFullYear()+'-'+mois+'-'+date.getDate();
-        parsedTournois.forEach(tournoi => {
-            if(dateJour == tournoi.date_debut){
-                jour.classList.add('yatournoi');
-                jour.appendChild(logoTournoi);
-            } else{
-                jour.classList.add('yapastournoi');
-            }
-        });
+        if(parsedTournois==''){
+            jour.classList.add('yapastournoi');
+        } else {
+            parsedTournois.forEach(tournoi => {
+                if(dateJour == tournoi.date_debut){
+                    jour.classList.add('yatournoi');
+                    jour.appendChild(logoTournoi);
+                } else{
+                    jour.classList.add('yapastournoi');
+                }
+            });
+        }
+        
 
         jour.setAttribute('id', dateJour);
         jourHead.textContent = date.getDate();
