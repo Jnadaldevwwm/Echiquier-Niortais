@@ -57,7 +57,6 @@ class ControlerArticle extends Controler{
     }
     public function deleteArticle($idArticle){
         $this->articles->removeArticle($idArticle);
-        //header('Location:?action=articlesManagement');
     }
     public function searchArticle(){
 

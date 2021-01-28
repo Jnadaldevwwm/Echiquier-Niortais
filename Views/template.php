@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/calendrier.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 <body>
 <div id="togglingMenu" class='togglingMenu hidden'>
@@ -98,7 +99,7 @@
                                 <ul>
                                     <li><a href="?action=disconnect">Se déconnecter</a></li>
                                     ';
-                                    if($_SESSION['permission']=='1'){
+                                    if($_SESSION['permission']=='1'||$_SESSION['permission']=='2'){
                                         echo '<li><a href="?action=indexAdmin">Panneau d\'administration</a></li>';
                                     }
                                     echo '
@@ -144,7 +145,7 @@
         </section>
     </section>
     <footer>
-        Le footer
+        Mentions légals et autres...
     </footer>
     <script src="scripts/script.js"></script>
 </body>

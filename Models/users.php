@@ -47,7 +47,7 @@
         }
 
         public function getAllUsers(){
-            $sql = "SELECT u.id as id, u.login as login, u.prenom as prenom, u.nom as nom, r.name as name FROM users u INNER JOIN role r ON u.permission = r.id";
+            $sql = "SELECT u.id as id, u.login as login, u.prenom as prenom, u.nom as nom, r.denomination as name FROM users u INNER JOIN role r ON u.permission = r.id";
             $result = $this->goQuery($sql);
             $users = $result->fetchAll();
             $result->closeCursor();
@@ -72,5 +72,9 @@
         public function createUser($uLogin, $uNom, $uPrenom, $uMdp, $uAvatar, $uToken){
             $sql = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, 3, ?, false)";
             return $this->goQuery($sql, array($uLogin, $uNom, $uPrenom, $uAvatar, $uMdp, $uToken));
+        }
+        public function deleteUser($userid){
+            $sql = "DELETE FROM users WHERE id=?";
+            return $this->goQuery($sql, array($userid));
         }
     }

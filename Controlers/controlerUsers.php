@@ -175,6 +175,15 @@ class ControlerUsers extends Controler{
         }
         
     }
+    public function deleteUser(){
+        if(isset($_SESSION['permission']) && $_SESSION['permission'] == '1'){
+            $userId = $_GET['userId'];
+            $this->user->deleteUser($userId);
+           // return header('Location: ?action=usersManagement&statusUser=deleted');
+        } else {
+            return header('Location: ?action=index');
+        }
+    }
     public function disconnect(){
         if(isset($_SESSION)){
             session_destroy();
