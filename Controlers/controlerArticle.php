@@ -4,6 +4,7 @@ require_once '../Controlers/baseControler.php';
 require_once '../views/view.php';
 require_once '../Models/articles.php';
 require_once '../Controlers/scripts/dataImageConvert.php';
+require_once '../Controlers/scripts/deleteImage.php';
 
 class ControlerArticle extends Controler{
     private $articles;
@@ -57,6 +58,8 @@ class ControlerArticle extends Controler{
         header('Location:?action=articlesManagement');
     }
     public function deleteArticle($idArticle){
+        $article = $this->articles->getArticleById($idArticle);
+        imageRemover($article['contenu']);
         $this->articles->removeArticle($idArticle);
     }
     public function searchArticle(){
