@@ -15,3 +15,38 @@ deleteButton.forEach(button => {
         }
     })
 });
+
+// const formRoleUser = document.querySelectorAll('.selectRoleUser');
+// formRoleUser.forEach(roleUser => {
+//     roleUser.addEventListener('focus',function(){
+//         var previousValue = roleUser.value;
+//         console.log(previousValue)
+//         roleUser.addEventListener('change', function(e){
+//             e.preventDefault();
+//             var action = confirm('Voulez-vous changer le role de l\'utilisateur ?');
+//             if(action== true){
+    
+//             } else {
+//                 console.log(previousValue)
+//                 roleUser.value = previousValue;
+//             }
+//         })
+//     })
+// })
+
+const formRoleUser = document.querySelectorAll('.selectRoleUser');
+formRoleUser.forEach(roleUser => {
+    roleUser.dataset.prev = roleUser.value;
+    roleUser.addEventListener('change', function(e){
+        e.preventDefault();
+        var action = confirm('Voulez-vous changer le role de l\'utilisateur ?');
+        if(action== true){
+
+        } else {
+            roleUser.value = roleUser.dataset.prev;
+        }
+    })
+
+})
+
+

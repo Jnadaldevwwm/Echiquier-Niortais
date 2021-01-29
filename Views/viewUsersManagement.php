@@ -35,7 +35,13 @@
                     {$user['nom']}
                 </td>
                 <td>
-                    {$user['name']}
+                    <form action='' method='POST' class='formRoleUser'>
+                        <select name='roleUser' class='selectRoleUser'>
+                            <option value=1 ".($user['name']=='Administrateur'?'selected="selected"':'').">Administrateur</option>
+                            <option value=2 ".($user['name']=='Rédacteur'?'selected="selected"':'').">Rédacteur</option>
+                            <option value=3 ".($user['name']=='Membre'?'selected="selected"':'').">Membre</option>
+                        </select
+                    </form>
                 </td>
                 <td> 
                     <a href=''>
