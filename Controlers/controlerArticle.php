@@ -32,6 +32,7 @@ class ControlerArticle extends Controler{
         $dateArticle = date("Y-m-d H:i:s");
         $titreArticle = $data['titreArticle'];
         $contenuArticle = $data['contentArticle'];
+        $contenuArticle = articleImageReplacer($contenuArticle);
         if(!empty($_FILES['avatar']['name'])){
             define('WIDTH_MAX', 2000);    // Largeur max de l'image en pixels
             define('HEIGHT_MAX', 2000);    // Hauteur max de l'image en pixels

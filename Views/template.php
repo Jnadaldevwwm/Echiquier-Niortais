@@ -44,7 +44,7 @@
         <span>L'Echiquier Niortais - 49 rue de Ribray 79000 Niort - Tel : 06 85 57 74 60 - E-Mail : echiquiers.niortais@gmail.com
         </span>
     </div>
-    <section id="visuelPage">
+    <div id="visuelPage">
         <header>
             <div id="banner">
                 <a href="?action='index'"><img src="images/logo.gif" alt="logo echiquier niortais" id="logoSite"></a>
@@ -104,7 +104,7 @@
                                     }
                                     echo '
                                     <li><a href="?action=viewProfil">Mon profil</a></li>
-                                <ul>
+                                </ul>
                             </nav>
                             ';
                     }
@@ -112,7 +112,7 @@
             </div>
         </header>
 
-        <section id="midContent">
+        <div id="midContent">
             <main>
                 <?= $content ?>
             </main>
@@ -142,8 +142,8 @@
                     </div>
                 </section>
             </aside>
-        </section>
-    </section>
+        </div>
+    </div>
     <footer>
         Mentions légals et autres...
     </footer>

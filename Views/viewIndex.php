@@ -8,7 +8,7 @@
     foreach ($articles as $article) {
         echo "<article class='cardArticle mAuto'>
                 <div class='cardHeader'>
-                <a href='?action=article&idArticle={$article['id']}'>
+                <a href='?action=article&idArticle={$article['id']}' class='imgDesk'>
                     <img src='images/uploads/{$article['image']}' alt='illustration article'>
                 </a>
                 </div>
