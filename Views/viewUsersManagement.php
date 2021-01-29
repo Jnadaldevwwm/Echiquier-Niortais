@@ -5,6 +5,9 @@
             case 'deleted':
                 echo '<div id="updtStat" class="successStat txtCenter">Utilisateur supprimé</div>';
                 break;
+            case 'role':
+                echo '<div id="updtStat" class="successStat txtCenter">Permissions mises à jour</div>';
+                break;
         }
     }
 ?>
@@ -36,7 +39,7 @@
                 </td>
                 <td>
                     <form action='' method='POST' class='formRoleUser'>
-                        <select name='roleUser' class='selectRoleUser'>
+                        <select name='roleUser' class='selectRoleUser' data-id={$user['id']} >
                             <option value=1 ".($user['name']=='Administrateur'?'selected="selected"':'').">Administrateur</option>
                             <option value=2 ".($user['name']=='Rédacteur'?'selected="selected"':'').">Rédacteur</option>
                             <option value=3 ".($user['name']=='Membre'?'selected="selected"':'').">Membre</option>

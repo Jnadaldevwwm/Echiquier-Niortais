@@ -82,6 +82,9 @@
                         case 'adminCreateUserPage':
                             $this->ctrlUsers->adminCreateUserPage();
                             break;
+                        case 'changeRoleUser':
+                            $this->ctrlUsers->changeRoleUser();
+                            break;
                         case 'motdManagement':
                             $this->ctrlMotd->motdManagement();
                             break;

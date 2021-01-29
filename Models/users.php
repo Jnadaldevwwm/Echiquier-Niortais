@@ -73,6 +73,10 @@
             $sql = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, 3, ?, false)";
             return $this->goQuery($sql, array($uLogin, $uNom, $uPrenom, $uAvatar, $uMdp, $uToken));
         }
+        public function changeRoleUser($userId,$newRole){
+            $sql = "UPDATE users SET permission=? WHERE id=?";
+            return $this->goQUery($sql, array($newRole,$userId));
+        }
         public function deleteUser($userid){
             $sql = "DELETE FROM users WHERE id=?";
             return $this->goQuery($sql, array($userid));

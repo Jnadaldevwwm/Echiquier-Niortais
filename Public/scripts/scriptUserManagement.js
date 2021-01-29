@@ -16,32 +16,19 @@ deleteButton.forEach(button => {
     })
 });
 
-// const formRoleUser = document.querySelectorAll('.selectRoleUser');
-// formRoleUser.forEach(roleUser => {
-//     roleUser.addEventListener('focus',function(){
-//         var previousValue = roleUser.value;
-//         console.log(previousValue)
-//         roleUser.addEventListener('change', function(e){
-//             e.preventDefault();
-//             var action = confirm('Voulez-vous changer le role de l\'utilisateur ?');
-//             if(action== true){
-    
-//             } else {
-//                 console.log(previousValue)
-//                 roleUser.value = previousValue;
-//             }
-//         })
-//     })
-// })
-
 const formRoleUser = document.querySelectorAll('.selectRoleUser');
 formRoleUser.forEach(roleUser => {
     roleUser.dataset.prev = roleUser.value;
     roleUser.addEventListener('change', function(e){
         e.preventDefault();
+        var id = roleUser.dataset.id;
         var action = confirm('Voulez-vous changer le role de l\'utilisateur ?');
         if(action== true){
-
+            httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function(){};
+            httpRequest.open('GET','index.php?action=changeRoleUser&userId='+id+'&newRole='+roleUser.value);
+            httpRequest.send();
+            window.location.href = window.location.href + "&statusUser=role";
         } else {
             roleUser.value = roleUser.dataset.prev;
         }

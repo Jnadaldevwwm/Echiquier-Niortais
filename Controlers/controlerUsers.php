@@ -189,6 +189,11 @@ class ControlerUsers extends Controler{
             $view->render(array('user'=>$user),array('motd'=>self::motd()));
         }
     }
+    public function changeRoleUser(){
+        if(isset($_SESSION['permission']) && $_SESSION['permission'] == '1'){
+            $this->user->changeRoleUser($_GET['userId'],$_GET['newRole']);
+        }
+    }
     public function disconnect(){
         if(isset($_SESSION)){
             session_destroy();
