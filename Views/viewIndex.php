@@ -18,7 +18,7 @@
                     <a href='?action=article&idArticle={$article['id']}' class='lienArticle'>
                         <img src='images/uploads/{$article['image']}' alt='illustration article'>
                     </a>
-                    <div class='resumeArticle'>".substr(preg_replace('/<[^>]*>/','',$article['contenu']),0,200)." ...</div>
+                    <div class='resumeArticle'>".substr(preg_replace('/<[^>]*>/',' ',$article['contenu']),0,200)." ...</div>
                     <a href='?action=article&idArticle={$article['id']}' class='lienArticle'>Voir plus</a>
                 </div>
                 </article>

@@ -30,7 +30,7 @@
             try{
                 if(isset($_GET['action'])){
                     switch ($_GET['action']) {
-                        case 'index':
+                        case 'index':   // Accueil
                             $this->ctrlIndex->index();
                             break;
                         case 'article':
@@ -48,6 +48,9 @@
                             break;
                         case 'signIn':
                             $this->ctrlUsers->signIn($_POST);
+                            break;
+                        case 'activation':
+                            $this->ctrlUsers->activation();
                             break;
                         case 'indexAdmin':
                             $this->ctrlUsers->indexAdmin();

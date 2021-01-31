@@ -179,6 +179,7 @@ input[type="submit"]{
 }
 #tweetBox{
     border: 1px solid green;
+    padding: 1px;
 }
 #searchZ{
     padding: 15px;

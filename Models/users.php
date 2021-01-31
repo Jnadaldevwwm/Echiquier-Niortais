@@ -60,6 +60,18 @@
             $user->closeCursor();
             return $result;
         }
+        public function getUserByLogin($userLogin){
+            $sql = "SELECT * FROM users WHERE login = ?";
+            $user = $this->goQuery($sql, array($userId));
+            if($user->rowCount()>0){
+                $result = $user->fetch();
+                $user->closeCursor();
+                return $user;
+            } else {
+                return false;
+            }
+            
+        }
         public function updateUser($userId,$dataUser){
             if($dataUser['avatar']!=''){
                 $sql = "UPDATE users SET login=?, nom=?, prenom=?, avatar=? WHERE id=?";
@@ -69,9 +81,9 @@
                 return $this->goQuery($sql,array($dataUser['login'],$dataUser['nom'],$dataUser['prenom'],$userId));
             }
         }
-        public function createUser($uLogin, $uNom, $uPrenom, $uMdp, $uAvatar, $uToken){
-            $sql = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, 3, ?, false)";
-            return $this->goQuery($sql, array($uLogin, $uNom, $uPrenom, $uAvatar, $uMdp, $uToken));
+        public function createUser($uLogin, $uNom, $uPrenom, $uMail, $uMdp, $uAvatar, $uToken){
+            $sql = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, ?, 3, ?, false)";
+            return $this->goQuery($sql, array($uLogin, $uNom, $uPrenom, $uMail, $uAvatar, $uMdp, $uToken));
         }
         public function changeRoleUser($userId,$newRole){
             $sql = "UPDATE users SET permission=? WHERE id=?";

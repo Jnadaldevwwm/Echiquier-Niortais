@@ -23,36 +23,64 @@ class ControlerUsers extends Controler{
         }
         
     }
+
+    // Controleurs pour l'inscription sur le site
+    // Génère la view :
     public function signInPage(){
         $view = new View('signInPage');
         $view->render(array(),array('motd'=>self::motd()));
     }
+    // Créer l'utilisateur
     public function signIn($data){
-        if(isset($data) && !empty($data)){
-            $uLogin = htmlspecialchars($data['username']);
-            $uNom = htmlspecialchars($data['nom']);
-            $uPrenom = htmlspecialchars($data['prenom']);
-            $uMdp = htmlspecialchars($data['password']);
-            $hashedMdp = password_hash($uMdp, PASSWORD_DEFAULT);
-            if(!empty($_FILES['avatar']['name'])){
-                define('WIDTH_MAX', 800);    // Largeur max de l'image en pixels
-                define('HEIGHT_MAX', 800);    // Hauteur max de l'image en pixels
-                require "../Controlers/scripts/uploadImage.php";
-                $uAvatarLink=$nomImage;
-                if($message!='OK'){
-                    return header('Location: ?action=signInPage&statusUpdate=upload&messageScript='.$message);
+        if($this->user->getUserById(htmlspecialchars($data['username'])) == false){
+            if(isset($data) && !empty($data)){
+                $uLogin = htmlspecialchars($data['username']);
+                $uNom = htmlspecialchars($data['nom']);
+                $uPrenom = htmlspecialchars($data['prenom']);
+                $uMail = htmlspecialchars($data['email']);
+                $uMdp = htmlspecialchars($data['password']);
+                $hashedMdp = password_hash($uMdp, PASSWORD_DEFAULT);
+                if(!empty($_FILES['avatar']['name'])){
+                    define('WIDTH_MAX', 800);    // Largeur max de l'image en pixels
+                    define('HEIGHT_MAX', 800);    // Hauteur max de l'image en pixels
+                    require "../Controlers/scripts/uploadImage.php";
+                    $uAvatarLink=$nomImage;
+                    if($message!='OK'){
+                        return header('Location: ?action=signInPage&statusUpdate=upload&messageScript='.$message);
+                    }
+                } else {
+                    $uAvatarLink='defaultPp.png';
                 }
+                $uToken = md5(microtime(TRUE)*100000);
+                $this->user->createUser($uLogin,$uNom,$uPrenom,$uMail,$hashedMdp,$uAvatarLink,$uToken);
+                // Mail confirmation
+                $destinataire = $uMail;
+                $sujet = "Activer votre compte";
+                $entete = "From : inscriptionechiquier@juliennadal-larios.fr";
+                $message = "Bienvenue sur Echiquier Niortais,
+                
+                Pour activer votre compte, veuillez cliquer sur le lien ci-dessous ou copier/coller dans votre navigateur Internet.
+                
+                http://echiquierniortais.juliennadal-larios.fr/index.php?action=activation&log=".urlencode($uLogin)."&token=".urlencode($uToken)."
+
+                ------------------------
+                Ceci est un mail automatique, Merci de ne pas y répondre.";
+                mail($destinataire, $sujet, $message, $entete);
+                echo "Un mail de confirmation vous à été envoyé, Vous allez être redirigé...";
+                header( "refresh:5;url=index.php" );
+
             } else {
-                $uAvatarLink='default.png';
+                header('Location:?action=index');
             }
-            $uToken = bin2hex(random_bytes(10));
-            $this->user->createUser($uLogin,$uNom,$uPrenom,$hashedMdp,$uAvatarLink,$uToken);
-
-
         } else {
-            header('Location:?action=index');
+            $message = "Un utilisateur avec ce nom d'utilisateur existe déja";
+            header("Location: ?action=signInPage&statusUpdate=upload&messageScript={$message}");
         }
-        
+    }
+
+    public function activation(){
+        $uLogin = urldecode($_GET['log']);
+        $uToken = urldecode($_GET['token']);
     }
 
     //signUp : Methode de verification et d'initialisation de session à la connection d'un utilisateur. Prend en paramètre $data : les datas en POST envoyés par le formulaire de connection.
@@ -66,15 +94,20 @@ class ControlerUsers extends Controler{
                 $user = $this->user->returnUser($login);
                 //On vérifie que les mot de passe est bon
                 if(password_verify($password,$user['password'])){
-                    $error = false; // Pas d'erreurs
-                    $_SESSION['login']=$user['login'];      //  On set toutes nos variables de session
-                    $_SESSION['userToken']=$user['token'];
-                    $_SESSION['id']=$user['id'];
-                    $_SESSION['permission']=$user['permission'];
-                    $_SESSION['name']=$user['prenom'];
-                    $_SESSION['fName']=$user['nom'];
-                    $_SESSION['avatar']=$user['avatar'];
-                    header('Location: ?action=index');
+                    // On verifie que le compte est actif
+                    if($user['statut'] != false){
+                        $error = false; // Pas d'erreurs
+                        $_SESSION['login']=$user['login'];      //  On set toutes nos variables de session
+                        $_SESSION['userToken']=$user['token'];
+                        $_SESSION['id']=$user['id'];
+                        $_SESSION['permission']=$user['permission'];
+                        $_SESSION['name']=$user['prenom'];
+                        $_SESSION['fName']=$user['nom'];
+                        $_SESSION['avatar']=$user['avatar'];
+                        header('Location: ?action=index');
+                    } else {
+                        $error = "Le compte n'est pas encore activé";
+                    }
                 }else{
                     $error = "Mot de passe incorrect."; // Si le mdp est incorrect
                 }
