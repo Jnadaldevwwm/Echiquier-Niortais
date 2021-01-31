@@ -79,11 +79,15 @@ class ControlerUsers extends Controler{
     }
 
     public function activation(){
-        $uLogin = htmlspecialchars(urldecode($_GET['log']));
-        $uToken = htmlspecialchars(urldecode($_GET['token']));
-        $this->user->setActive($uLogin,$uToken);
-        echo "Votre compte a bien été activé. Vous allez être redirigé...";
-        header("refresh:4;url=index.php?action=signUpPage");
+        if(isset($_GET['log'])&&isset($_GET['token'])){
+            $uLogin = htmlspecialchars(urldecode($_GET['log']));
+            $uToken = htmlspecialchars(urldecode($_GET['token']));
+            $this->user->setActive($uLogin,$uToken);
+            echo "Votre compte a bien été activé. Vous allez être redirigé...";
+            header("refresh:4;url=index.php?action=signUpPage");
+        } else {
+            header('Location: index.php');
+        }
     }
 
     //signUp : Methode de verification et d'initialisation de session à la connection d'un utilisateur. Prend en paramètre $data : les datas en POST envoyés par le formulaire de connection.
