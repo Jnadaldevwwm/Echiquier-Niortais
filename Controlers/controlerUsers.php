@@ -32,7 +32,7 @@ class ControlerUsers extends Controler{
     }
     // Créer l'utilisateur
     public function signIn($data){
-        if($this->user->getUserById(htmlspecialchars($data['username'])) == false){
+        if($this->user->getUserByLogin(htmlspecialchars($data['username'])) == false){
             if(isset($data) && !empty($data)){
                 $uLogin = htmlspecialchars($data['username']);
                 $uNom = htmlspecialchars($data['nom']);
@@ -64,9 +64,9 @@ class ControlerUsers extends Controler{
                 http://echiquierniortais.juliennadal-larios.fr/index.php?action=activation&log=".urlencode($uLogin)."&token=".urlencode($uToken)."
 
                 ------------------------
-                Ceci est un mail automatique, Merci de ne pas y répondre.";
+                Ceci est un mail automatique, Merci de ne pas y repondre.";
                 mail($destinataire, $sujet, $message, $entete);
-                echo "Un mail de confirmation vous à été envoyé, Vous allez être redirigé...";
+                echo "Un mail de confirmation vous a été envoyé, Vous allez être redirigé...";
                 header( "refresh:5;url=index.php" );
 
             } else {
@@ -79,8 +79,11 @@ class ControlerUsers extends Controler{
     }
 
     public function activation(){
-        $uLogin = urldecode($_GET['log']);
-        $uToken = urldecode($_GET['token']);
+        $uLogin = htmlspecialchars(urldecode($_GET['log']));
+        $uToken = htmlspecialchars(urldecode($_GET['token']));
+        $this->user->setActive($uLogin,$uToken);
+        echo "Votre compte a bien été activé. Vous allez être redirigé...";
+        header("refresh:4;url=index.php?action=signUpPage");
     }
 
     //signUp : Methode de verification et d'initialisation de session à la connection d'un utilisateur. Prend en paramètre $data : les datas en POST envoyés par le formulaire de connection.

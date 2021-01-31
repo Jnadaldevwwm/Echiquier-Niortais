@@ -62,7 +62,7 @@
         }
         public function getUserByLogin($userLogin){
             $sql = "SELECT * FROM users WHERE login = ?";
-            $user = $this->goQuery($sql, array($userId));
+            $user = $this->goQuery($sql, array($userLogin));
             if($user->rowCount()>0){
                 $result = $user->fetch();
                 $user->closeCursor();
@@ -72,6 +72,13 @@
             }
             
         }
+
+        public function setActive($uLogin,$uToken){
+            $sql = "UPDATE users SET statut = 1 WHERE login = ? AND token = ?";
+            $user = $this->goQuery($sql, array($uLogin,$uToken));
+            return true;
+        }
+
         public function updateUser($userId,$dataUser){
             if($dataUser['avatar']!=''){
                 $sql = "UPDATE users SET login=?, nom=?, prenom=?, avatar=? WHERE id=?";

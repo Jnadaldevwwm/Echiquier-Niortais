@@ -1,6 +1,6 @@
 <?php
     if(isset($_GET['statusUpdate'])&&$_GET['statusUpdate']=='upload'){
-            echo '<div id="updtStat" class="errorStat txtCenter">Erreur lors de la mise à jour de l\'avatar : <br>'.$_GET['messageScript'].'</div>';
+            echo '<div id="updtStat" class="errorStat txtCenter">Erreur : <br>'.$_GET['messageScript'].'</div>';
         }
     ?>
     <h1 class='txtCenter'>Créer un compte : </h1>
