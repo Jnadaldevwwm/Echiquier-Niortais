@@ -182,7 +182,7 @@ ajRequete.onload = function(){
                         modules: {
                             toolbar: toolbarOptions
                         },
-                        placeholder: 'Ecrire un article...',
+                        placeholder: 'Description Tournoi',
                         theme: 'snow'
                     });
                     

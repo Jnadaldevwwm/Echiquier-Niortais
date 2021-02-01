@@ -20,7 +20,7 @@ class ControlerTournois extends Controler{
     public function tournoisManagement(){
 
         
-        $view = new View('TournoiCreation');
+        $view = new View('TournoisManagement');
         $view->render(array(),array('motd'=>self::motd()));
     }
 
