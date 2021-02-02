@@ -231,7 +231,7 @@ input[type="submit"]{
 }
 main{
     background-color:  #FFF5E6;
-    padding: 75px 0 75px 0;
+    padding: 75px 0 75px 1rem;
 }
 footer{
     padding: 5px;

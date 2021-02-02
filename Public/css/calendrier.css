@@ -108,3 +108,34 @@
     display: block;
     height: 130px;
 }
+
+/*** Responsiv ***/
+
+@media screen and (max-width: 640px){
+    #zoneCalendrier{
+        width: 320px;
+    }
+    .enteteCalendrier{
+        width: 320px;
+    }
+    .zoneJours{
+        width: 270px;
+        height: 372px;
+    }
+    .jour{
+        width: 53px;
+        height: 53px;
+    }
+    .jourHead{
+        height: 33px;
+    }
+    .jourBody{
+        height: 20px;
+    }
+    .goDroite, .goGauche{
+        height: 372px;
+    }
+    .goDroite::after, .goGauche::after{
+        top:170px;
+    }
+}
