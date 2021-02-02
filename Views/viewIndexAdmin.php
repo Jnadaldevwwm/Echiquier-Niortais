@@ -31,6 +31,16 @@
             </div>
         </div>
     </a>
+    <a href="?action=topHeaderManagement">
+        <div class="cardAdmin">
+            <div class="headCardAdmin">
+                <img src="images/iconTopHeader.png" alt="icone">
+            </div>
+            <div class="bodyCardAdmin">
+                Bandeau d'affichage.
+            </div>
+        </div>
+    </a>
     <a href="?action=articlesManagement">
         <div class="cardAdmin">
             <div class="headCardAdmin">

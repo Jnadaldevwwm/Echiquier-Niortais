@@ -26,7 +26,7 @@ class ControlerIndex extends Controler{
         $pagination = array('currentPage'=>$currentPage,'pages'=>$nbPages);
 
         $view = new View('Index');
-        $view->render(array('articles'=>$articles,'pagination'=>$pagination),array('motd'=>self::motd()));
+        $view->render(array('articles'=>$articles,'pagination'=>$pagination),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
     }
     public function test(){
         $data = $_POST;

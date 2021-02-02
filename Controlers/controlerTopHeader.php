@@ -4,18 +4,16 @@ require_once '../Controlers/baseControler.php';
 require_once '../views/view.php';
 require_once '../Models/widgets.php';
 
-class ControlerMotd extends Controler{
-    private $motd;
+class ControlerTopHeader extends Controler{
 
-    public function __construct(){
-        $this->motd = new Widgets();
+    public function __construct(){  
     }
 
-    public function motdManagement(){
+    public function topHeaderManagement(){
         if(isset($_SESSION['permission'])&&$_SESSION['permission']=='1'){
-            $currentMotd = $this->motd->getMotd();
-            $view = new View('motdManagement');
-            $view->render(array('currentMotd' => $currentMotd),array('motd' => self::motd(),'topheader'=>self::topHeader()));
+            $currentTopHeader = self::topHeader();
+            $view = new View('topHeaderManagement');
+            $view->render(array('currentTopHeader' => $currentTopHeader),array('motd' => self::motd(),'topheader'=>self::topHeader()));
         } else {
             return header('Location: ?action=index');
         }

@@ -4,25 +4,25 @@
     require_once '../Controlers/controlerIndex.php';
     require_once '../Controlers/controlerArticle.php';
     require_once '../Controlers/controlerUsers.php';
-    require_once '../Controlers/controlerMotd.php';
     require_once '../Controlers/baseControler.php';
     require_once '../Controlers/controlerTournois.php';
+    require_once '../Controlers/controlerWidgets.php';
 
     class Router{
         private $ctrlIndex;
         private $ctrlArticle;
         private $ctrlUsers;
-        private $ctrlMotd;
         private $ctrlBase;
         private $ctrlTournois;
+        private $ctrlWidgets;
 
         public function __construct(){
             $this->ctrlIndex = new ControlerIndex();
             $this->ctrlArticle = new ControlerArticle();
             $this->ctrlUsers = new ControlerUsers();
-            $this->ctrlMotd = new ControlerMotd();
             $this->ctrlBase = new Controler();
             $this->ctrlTournois = new ControlerTournois();
+            $this->ctrlWidgets = new ControlerWidgets();
         }
 
         // Router simple en fonction du paramètre "action" passé en GET.
@@ -89,11 +89,14 @@
                             $this->ctrlUsers->changeRoleUser();
                             break;
                         case 'motdManagement':
-                            $this->ctrlMotd->motdManagement();
+                            $this->ctrlWidgets->motdManagement();
                             break;
                         case 'upMotd':
                             $newMotd = $_POST;
-                            $this->ctrlMotd->motdUpdate($newMotd);
+                            $this->ctrlWidgets->motdUpdate($newMotd);
+                            break;
+                        case 'topHeaderManagement':
+                            $this->ctrlWidgets->topHeaderManagement();
                             break;
                         case 'viewProfil':
                             $this->ctrlUsers->viewProfil();

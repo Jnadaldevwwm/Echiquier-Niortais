@@ -14,14 +14,14 @@ class ControlerTournois extends Controler{
     public function tournoiCreationPage(){
 
         $view = new View('TournoiCreation');
-        $view->render(array(),array('motd'=>self::motd()));
+        $view->render(array(),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
     }
 
     public function tournoisManagement(){
 
         
         $view = new View('TournoisManagement');
-        $view->render(array(),array('motd'=>self::motd()));
+        $view->render(array(),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
     }
 
 

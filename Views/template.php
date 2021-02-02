@@ -41,7 +41,8 @@
         </nav>
 </div>
     <div id="topHeader">
-        <span>L'Echiquier Niortais - 49 rue de Ribray 79000 Niort - Tel : 06 85 57 74 60 - E-Mail : echiquiers.niortais@gmail.com
+        <span>
+            <?= $widgets['topheader']['content'] ?>
         </span>
     </div>
     <div id="visuelPage">
@@ -120,7 +121,7 @@
                 <section>
                     <div id="motdZ">
                         <br>
-                        <?= $aside ?>
+                        <?php require '../views/inc/sidebar.php' ?>
                     </div>
                     <hr>
                     <div id="searchZ">

@@ -1,8 +1,8 @@
 <div id="motd">
     <h3>
-        <?= $motd['title'] ?>
+        <?= $widgets['motd']['title'] ?>
     </h3>
     <p>
-        <?= $motd['content'] ?>
+        <?= $widgets['motd']['content'] ?>
     </p>
 </div>

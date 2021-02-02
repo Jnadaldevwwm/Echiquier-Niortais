@@ -16,13 +16,13 @@ class ControlerArticle extends Controler{
     public function pageArticle($idArticle){
         $article = $this->articles->getArticleById($idArticle);
         $view = new View('Article');
-        $view->render(array('article'=>$article),array('motd'=>self::motd()));
+        $view->render(array('article'=>$article),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
     }
 
     public function pageNewArticle(){
         if(isset($_SESSION['permission'])&&$_SESSION['permission']=='1'){
             $view = new View('pageNewArticle');
-            $view->render(array(),array('motd'=>self::motd()));
+            $view->render(array(),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
         } else {
             header('Location:?action=index');
         }
@@ -50,7 +50,7 @@ class ControlerArticle extends Controler{
         $article = $this->articles->getArticleById($idArticle);
 
         $view = new View('editArticle');
-        $view->render(array('article'=>$article),array('motd'=>self::motd()));
+        $view->render(array('article'=>$article),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
     }
     public function edit(){
         $dataArticle = array('titre'=>$_POST['titreArticle'],'contenu'=>$_POST['contentArticle'],'id'=>$_GET['idArticle']);
@@ -68,7 +68,7 @@ class ControlerArticle extends Controler{
             $keyWords = $_POST['search'];
             $articles = $this->articles->searchArticle($keyWords);
             $view = new View('resultatRecherche');
-            $view->render(array('articles'=>$articles,'keyWords'=>$keyWords),array('motd'=>self::motd()));
+            $view->render(array('articles'=>$articles,'keyWords'=>$keyWords),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
         } else {
             header('Location:?action=index');
         }

@@ -17,7 +17,7 @@ class ControlerUsers extends Controler{
     public function signUpPage(){
         if(!isset($_SESSION['userToken'])){
             $view = new View('pageLogin');
-            $view->render(array(),array('motd'=>self::motd()));  
+            $view->render(array(),array('motd'=>self::motd(),'topheader'=>self::topHeader()));  
         }else{
             header('Location: ?action=index');
         }
@@ -28,7 +28,7 @@ class ControlerUsers extends Controler{
     // Génère la view :
     public function signInPage(){
         $view = new View('signInPage');
-        $view->render(array(),array('motd'=>self::motd()));
+        $view->render(array(),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
     }
     // Créer l'utilisateur
     public function signIn($data){
@@ -122,7 +122,7 @@ class ControlerUsers extends Controler{
                 $error = "Nom d'utilisateur incorrect.";    // Si le login est incorrect
             }
             $view = new View('pageLogin');
-            return $view->render(array('error' => $error ),array('motd'=>self::motd()));
+            return $view->render(array('error' => $error ),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
         } else{
             header('Location: ?action=index');
         }
@@ -132,7 +132,7 @@ class ControlerUsers extends Controler{
     public function indexAdmin(){
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $view = new View('indexAdmin');
-            return $view->render(array(),array('motd'=>self::motd()));
+            return $view->render(array(),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
         } else{
             header('Location: ?action=index');
         }
@@ -154,7 +154,7 @@ class ControlerUsers extends Controler{
             $pagination = array('currentPage'=>$currentPage,'pages'=>$nbPages);
     
             $view = new View('articlesManagement');
-            $view->render(array('articles'=>$articles,'pagination'=>$pagination,'nbArticles'=>$nbArticles,'artParPage'=>$parPage),array('motd'=>self::motd()));
+            $view->render(array('articles'=>$articles,'pagination'=>$pagination,'nbArticles'=>$nbArticles,'artParPage'=>$parPage),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
         } else{
             header('Location: ?action=index');
         }
@@ -164,7 +164,7 @@ class ControlerUsers extends Controler{
         if(isset($_SESSION['userToken']) && $this->user->checkToken($_SESSION['userToken'])&&$_SESSION['permission']=='1'){
             $users = $this->user->getAllUsers();
             $view = new View('usersManagement');
-            $view->render(array('users'=>$users),array('motd'=>self::motd()));
+            $view->render(array('users'=>$users),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
         }
     }
 
@@ -172,7 +172,7 @@ class ControlerUsers extends Controler{
         if(isset($_SESSION['userToken'])){
             $user = $this->user->getOneUser($_SESSION['id']);
             $view = new View('viewProfil');
-            $view->render(array('user'=>$user),array('motd'=>self::motd()));
+            $view->render(array('user'=>$user),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
         } else {
             header('Location: ?action=index');
         }
@@ -226,7 +226,7 @@ class ControlerUsers extends Controler{
     public function adminCreateUserPage(){
         if(isset($_SESSION['permission']) && $_SESSION['permission'] == '1'){
             $view = new View('AdminCreateUser');
-            $view->render(array('user'=>$user),array('motd'=>self::motd()));
+            $view->render(array('user'=>$user),array('motd'=>self::motd(),'topheader'=>self::topHeader()));
         }
     }
     public function changeRoleUser(){

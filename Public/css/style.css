@@ -62,6 +62,15 @@ input[type="submit"]{
 .dFlex{
     display: flex;
 }
+.flexCol{
+    flex-direction: column;
+}
+.flexAlignCenter{
+    align-items: center;
+}
+.flexJustifyCenter{
+    justify-content: center;
+}
 .visible{
     visibility: visible;
 }
