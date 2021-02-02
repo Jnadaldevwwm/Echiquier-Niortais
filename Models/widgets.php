@@ -23,4 +23,8 @@
             $sql = 'UPDATE widgets SET title=?, content=? WHERE fonctio=\'motd\'';
             return $this->goQuery($sql,array($newMotd['titreMotd'],$newMotd['contenuMotd']));
         }
+        public function updateTopHeader($newTopHeader){
+            $sql = 'UPDATE widgets SET content=? WHERE fonctio=\'topheader\'';
+            return $this->goQuery($sql, array($newTopHeader));
+        }
     }

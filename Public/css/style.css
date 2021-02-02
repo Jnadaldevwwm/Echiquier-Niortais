@@ -469,7 +469,6 @@ nav ul li {
     height: 100vh;
     padding: 15px;
     transform: translateX(250px);
-    /* transition: transform 1s ease-in-out; */
     -webkit-box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.3); 
     box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.3);
 }
@@ -900,6 +899,18 @@ nav ul li {
     margin-bottom: 15px;
 }
 #formMotd textarea{
+    resize: none;
+}
+/*** TopHeader ***/
+#formTopHeader{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+#formTopHeader input, #formTopHeader textarea{
+    margin-bottom: 15px;
+}
+#formTopHeader textarea{
     resize: none;
 }
 /*** Article Editeur ***/

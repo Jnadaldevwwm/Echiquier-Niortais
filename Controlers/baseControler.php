@@ -1,7 +1,7 @@
 <?php
     require_once '../Models/widgets.php';
     class Controler{
-        private static $widgets;
+        public static $widgets;
 
         public function __construct(){
             static::$widgets = new Widgets;

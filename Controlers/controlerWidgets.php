@@ -35,4 +35,10 @@ class ControlerWidgets extends Controler{
             return header('Location: ?action=index');
         }
     }
+    public function topHeaderUpdate(){
+        if(isset($_POST) && isset($_SESSION['permission']) && $_SESSION['permission']=='1'){
+            self::$widgets->updateTopHeader($_POST['contenu']);
+            return header('Location: ?action=topHeaderManagement&upStat="ok"');
+        }
+    }
 }

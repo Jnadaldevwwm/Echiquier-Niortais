@@ -98,6 +98,9 @@
                         case 'topHeaderManagement':
                             $this->ctrlWidgets->topHeaderManagement();
                             break;
+                        case 'upTopHeader':
+                            $this->ctrlWidgets->topHeaderUpdate();
+                            break;
                         case 'viewProfil':
                             $this->ctrlUsers->viewProfil();
                             break;
