@@ -514,18 +514,18 @@ nav ul li {
     width: 20%;
 }
 /*** Admin ***/
-#uiAdmin{
+.uiAdmin{
     padding: 0 2rem 0 2rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
-#uiAdmin a{
+.uiAdmin a{
     padding: 15px;
     text-decoration: none;
     color: #9E0008;
 }
-#uiAdmin a:hover .cardAdmin{
+.uiAdmin a:hover .cardAdmin{
     background-color: rgb(216, 196, 114);
 }
 .cardAdmin{
@@ -619,6 +619,19 @@ nav ul li {
     }
     #desktopNav> ul> li> a:hover{
         color: #9E0008;
+    }
+    .navActiv{
+        position: relative;
+    }
+    .navActiv::after{
+        content: '';
+        height: 15px;
+        width: 30px;
+        background-color: #719E00;
+        position: absolute;
+        bottom: -28px;
+        left: 25%;
+        border-radius: 5px 5px 0 0;
     }
     #presDisplay{
         position: absolute;

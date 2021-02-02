@@ -1,5 +1,4 @@
 <?php
-  
 
 ?>
 <!DOCTYPE html>
@@ -65,9 +64,9 @@
                 
                 <nav id='desktopNav'>
                     <ul>
-                        <li><a href="?action=index">Accueil</a></li>
+                        <li><a href="?action=index" <?= $this->active==1?'class=navActiv':'' ?> >Accueil</a></li>
                         <li class='pRelativ'>
-                            <a href="" id='navPres'>Présentation▾</a>
+                            <a href="" id='navPres' <?= $this->active==2?'class=navActiv':'' ?>>Présentation▾</a>
                             <div id='presDisplay' class='hidden'>
                                         <a href="" class='lienDeroule'>Nous rejoindre</a>
                                         <a href="" class='lienDeroule'>Qui sommes nous ?</a>
@@ -75,15 +74,15 @@
                             </div>
                         </li>
                         <li class='pRelativ'>
-                            <a href="" id='navTournois'>Tournois▾</a>
+                            <a href="" id='navTournois' <?= $this->active==3?'class=navActiv':'' ?>>Tournois▾</a>
                             <div id='tournoisDisplay' class='hidden'>
                                         <a href="" class='lienDeroule'>Type tournoi 1</a>
                                         <a href="" class='lienDeroule'>Type tournoi 2</a>
                                         <a href="" class='lienDeroule'>Type tournoi 3</a>
                             </div>
                         </li>
-                        <li><a href="">Evènements</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="" <?= $this->active==4?'class=navActiv':'' ?>>Evènements</a></li>
+                        <li><a href="" <?= $this->active==5?'class=navActiv':'' ?>>Contact</a></li>
                     </ul>
                 </nav>
                 <?php

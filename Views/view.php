@@ -3,6 +3,7 @@
     class View{
         private $file;
         private $title;
+        private $active;
         private $widgets;
 
         public function __construct($action){

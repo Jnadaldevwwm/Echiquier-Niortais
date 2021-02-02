@@ -18,9 +18,11 @@
     Panneau d'Administration
 </h1>
 <br>
+<br>
+<h2>Paramétrage du site</h2>
 <hr>
 <br>
-<section id="uiAdmin">
+<section class="uiAdmin">
     <a href="?action=motdManagement">
         <div class="cardAdmin">
             <div class="headCardAdmin">
@@ -41,6 +43,11 @@
             </div>
         </div>
     </a>
+</section>
+<h2>Gestion du site</h2>
+<hr>
+<br>
+<section class="uiAdmin">
     <a href="?action=articlesManagement">
         <div class="cardAdmin">
             <div class="headCardAdmin">

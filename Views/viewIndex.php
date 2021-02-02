@@ -1,6 +1,6 @@
 <?php 
     $this->title = 'Accueil';
-
+    $this->active = 1;
     ?>
     <h1 class='txtCenter titrePage'>Actualités</h1>
     <br>
