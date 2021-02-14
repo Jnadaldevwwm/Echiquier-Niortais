@@ -12,7 +12,7 @@ function img64ToFile($data){
         $data = base64_decode($data);   // On convertit l'image
     
         if ($data === false) {
-            throw new \Exception('base64_decode failed');   // Exception si la convertion echoue
+            throw new \Exception('Décodage base64 a échoué');   // Exception si la convertion echoue
         }
     } else {    
         throw new \Exception('L\expression régulière n\'a pas trouvé d\'image');    // Exception si la regex ne trouve rien

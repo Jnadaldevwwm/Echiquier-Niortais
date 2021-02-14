@@ -3,7 +3,6 @@
     // Constantes
     define('TARGET', 'images/uploads/');    // Repertoire cible
     define('MAX_SIZE', 10000000);    // Taille max en octets du fichier
-
     
     // Tableaux de donnees
     $tabExt = array('jpg','gif','png','jpeg');    // Extensions autorisees

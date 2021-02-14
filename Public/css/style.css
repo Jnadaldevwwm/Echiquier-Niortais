@@ -812,10 +812,16 @@ nav ul li {
     flex-flow: row wrap;
     justify-content: center;
 }
+.pagination li a{
+    color: black;
+}
 .pagination *{
     margin-right: 2px;
 }
-
+.pagination li a.currentPagePagination{
+    color: #39A100;
+    font-weight: bold;
+}
 
 
 /**************

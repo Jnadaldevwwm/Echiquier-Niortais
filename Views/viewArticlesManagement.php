@@ -58,7 +58,11 @@
             if ($i > 2)
                 $links .= " ... ";
             for (; $i < min($current_page + 6, $total_pages); $i++) {
-                $links .= "<li><a href=\"?action=articlesManagement&page={$i}\">{$i}</a></li>";
+                if($i == $current_page){
+                    $links .= "<li><a href=\"?action=articlesManagement&page={$i}\" class='currentPagePagination'>{$i}</a></li>";
+                } else {
+                    $links .= "<li><a href=\"?action=articlesManagement&page={$i}\">{$i}</a></li>";
+                }
             }
             if ($i != $total_pages)
                 $links .= " ... ";
